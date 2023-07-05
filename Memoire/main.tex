@@ -1,0 +1,160 @@
+\documentclass[a4paper,12pt,twoside]{book}
+\usepackage[T1]{fontenc}
+\usepackage{inputenc}
+\usepackage{fontspec}
+\usepackage{lmodern}
+\usepackage[english,french]{babel}
+\usepackage{xspace} % pour la gestion des espaces après les commandes
+\usepackage{minted} % colored source code
+\usepackage{csquotes}
+
+% Mise en page École des chartes
+\usepackage[margin=2.5cm]{geometry} % marges
+\usepackage{setspace}
+\onehalfspacing % interligne de 1.5
+\setlength\parindent{1cm}
+
+\usepackage[backend=biber, sorting=nyt, style=enc, minbibnames=10, maxbibnames=10]{biblatex}
+\addbibresource{bibliographie/biblio.bib}
+\nocite{*}
+\defbibnote{intro}{Cette bibliographie présente toutes les ressources utilisées, de tout type, citées ou non, par simple ordre alphabétique.}
+
+\usepackage[pdfusetitle, pdfsubject={Mémoire TNAH — Titre}, pdfkeywords={mot1, mot2, mot3}]{hyperref}
+
+\author{Maëva Nguyen – M2 TNAH — ENC}
+\title{Titre mémoire}
+
+% ACRONYMS
+\usepackage[automake, acronym, toc]{glossaries}
+\makeglossaries
+\setacronymstyle{short-long}
+\newacronym{fair}{\textsc{fair}}{\emph{Findable Accessible Interoperable Reusable}}
+\newacronym{api}{\textsc{api}}{\emph{Application Programming Interface}}
+\newacronym{COREL}{\textsc{COREL}}{\emph{Code relationnel}}
+\newacronym{EFEO}{\textsc{EFEO}}{\emph{École Française d'Extrême-Orient}}
+\newacronym{IHEC}{\textsc{IHEC}}{\emph{Institut des hautes études chinoises}}
+\newacronym{CollEx}{\textsc{CollEx}}{\emph{Collections d'excellence}}
+\newacronym{EPHE}{\textsc{EPHE}}{\emph{École pratique des hautes études}}
+\newacronym{EHESS}{\textsc{EHESS}}{\emph{École des hautes études en sciences sociales}}
+\newacronym{IR}{\textsc{IR}}{\emph{Infrastructure de recherche}}
+\newacronym{LSC}{\textsc{LSC}}{\emph{Legalizing space in China}}
+\newacronym{EPJ}{\textsc{EPJ}}{\emph{Emerging procedural justice}}
+% COMMANDS
+\newcommand{\enc}{École nationale des chartes\xspace}
+\newcommand{\fair}{\gls{fair}\xspace}
+\newcommand{\api}{\gls{api}\xspace}
+\newcommand{\XIV}{\textsc{xiv}\ieme{}\xspace}
+\newcommand{\COREL}{\gls{COREL}\xspace}
+\newcommand{\cdf}{Collège de France\xspace}
+\newcommand{\EFEO}{\gls{EFEO}\xspace}
+\newcommand{\IHEC}{\gls{IHEC}\xspace}
+\newcommand{\CollEx}{\gls{CollEx}\xspace}
+\newcommand{\EPHE}{\gls{EPHE}\xspace}
+\newcommand{\EHESS}{\gls{EHESS}\xspace}
+\newcommand{\IR}{\gls{IR}\xspace}
+\newcommand{\LSC}{\gls{LSC}\xspace}
+\newcommand{\EPJ}{\gls{EPJ}\xspace}
+
+% Pour retirer le titre courant d'une page vide avant un chapitre
+\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
+% Pour des sections non numérotées dans la table des matière
+\newcommand\chapterNo[1]{
+	\chapter*{#1}
+	\markright{\MakeUppercase{#1}}
+}
+
+\begin{document}
+	
+	\onehalfspacing 
+	
+	\frontmatter
+	
+	\include{templates/page-titre}
+	
+	\thispagestyle{empty}	
+	\cleardoublepage
+	
+	\include{templates/resume}
+	
+	\chapterNo{Remerciements}
+	\addcontentsline{toc}{chapter}{Remerciements}
+	
+	\chapterNo{Introduction}
+	\addcontentsline{toc}{chapter}{Introduction}
+	
+	\thispagestyle{empty}
+	\cleardoublepage
+	
+	\mainmatter
+	
+	\part{Le projet \COREL, un projet de recherche inter-institutionnel}
+	\chapter{Le projet \COREL}
+	Le projet \COREL est un projet de recherche inter-institutionnel entre le \cdf et l'\EFEO. Ce projet pluridisciplinaire réunit les humanités numériques et l'histoire du droit chinois et initie ainsi la collaboration entre historiens du droit, sinologues et ingénieurs en sciences humaines.
+	\include{templates/chap1}
+	
+	
+	\clearemptydoublepage
+	
+	\chapter{Le corpus}
+	\include{templates/chap2}
+	
+	\clearemptydoublepage
+	
+	\chapter{Traitement et structuration d'un corpus documentaire}
+	\include{templates/chap3}
+	
+	\clearemptydoublepage
+	
+	
+	\part{La préparation des données à l’initialisation d’un projet, enjeux de l’encodage en XML-TEI}
+	\chapter{Initialisation et démarrage du projet}
+	\include{templates/chap4}
+	
+	\clearemptydoublepage
+	
+	\chapter{L’encodage en XML-TEI : un format standard des données}
+	\include{templates/chap5}
+	
+	
+	\clearemptydoublepage
+	
+	\chapter{Définir le modèle de données du projet}
+	\include{templates/chap6}
+	
+	
+	\clearemptydoublepage
+	
+	\part{La mise à disposition des données pour les chercheurs : comment agréger des sources partielles grâce au numérique ?}
+	\chapter{La mise en place d’un outil open source pour les chercheurs}
+	\include{templates/chap7}
+	
+	\clearemptydoublepage
+	
+	\chapter{Les bases de données document pour agréger des sources partielles}
+	\include{templates/chap8}
+	
+	
+	\clearemptydoublepage
+	
+	\chapter{Assurer un outil pérenne}
+	\include{templates/chap9}
+	
+	
+	\clearemptydoublepage
+	
+	\chapterNo{Conclusion}
+	\addcontentsline{toc}{chapter}{Conclusion}
+	
+	\appendix
+	\part*{Annexes}	
+	\addcontentsline{toc}{part}{Annexes}
+	
+	\clearemptydoublepage
+	
+	\backmatter
+	\printacronyms[title=Liste des acronymes,toctitle=Acronymes]
+	\printglossary 
+	\printbibliography
+	\tableofcontents
+	
+\end{document}
