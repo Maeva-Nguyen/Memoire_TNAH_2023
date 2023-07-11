@@ -4,6 +4,13 @@
 \usepackage{fontspec}
 \usepackage{lmodern}
 \usepackage[english,french]{babel}
+
+% Paquets pour le chinois
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Sans CJK SC}
+\usepackage[overlap,CJK]{ruby}
+\usepackage{xpinyin}
+
 \usepackage{xspace} % pour la gestion des espaces après les commandes
 \usepackage{minted} % colored source code
 \usepackage{csquotes}
@@ -14,10 +21,14 @@
 \onehalfspacing % interligne de 1.5
 \setlength\parindent{1cm}
 
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
 \usepackage[backend=biber, sorting=nyt, style=enc, minbibnames=10, maxbibnames=10]{biblatex}
-\addbibresource{bibliographie/biblio.bib}
+\addbibresource{bibliographie/bibliographie.bib}
 \nocite{*}
 \defbibnote{intro}{Cette bibliographie présente toutes les ressources utilisées, de tout type, citées ou non, par simple ordre alphabétique.}
+
 
 \usepackage[pdfusetitle, pdfsubject={Mémoire TNAH — Titre}, pdfkeywords={mot1, mot2, mot3}]{hyperref}
 
@@ -28,8 +39,7 @@
 \usepackage[automake, acronym, toc]{glossaries}
 \makeglossaries
 \setacronymstyle{short-long}
-\newacronym{fair}{\textsc{fair}}{\emph{Findable Accessible Interoperable Reusable}}
-\newacronym{api}{\textsc{api}}{\emph{Application Programming Interface}}
+\newacronym{fair}{\textsc{FAIR}}{\emph{Findable Accessible Interoperable Reusable}}
 \newacronym{COREL}{\textsc{COREL}}{\emph{Code relationnel}}
 \newacronym{EFEO}{\textsc{EFEO}}{\emph{École Française d'Extrême-Orient}}
 \newacronym{IHEC}{\textsc{IHEC}}{\emph{Institut des hautes études chinoises}}
@@ -39,6 +49,20 @@
 \newacronym{IR}{\textsc{IR}}{\emph{Infrastructure de recherche}}
 \newacronym{LSC}{\textsc{LSC}}{\emph{Legalizing space in China}}
 \newacronym{EPJ}{\textsc{EPJ}}{\emph{Emerging procedural justice}}
+\newacronym{POC}{\textsc{POC}}{Proof of concept}
+\newacronym{ANR}{\textsc{ANR}}{\emph{Agence nationale de la recherche}}
+\newacronym{XML}{\textsc{XML}}{\emph{Extensible Markup Language}}
+\newacronym{IIIF}{\textsc{IIIF}}{\emph{International image interoperability framework}}
+\newacronym{JSON}{\textsc{JSON}}{\emph{JavaScript Object Notation}}
+\newacronym{SQL}{\textsc{SQL}}{\emph{Structured Query Language}}
+\newacronym{SGBD}{\textsc{SGBD}}{\emph{Système de gestion de base de données}}
+\newacronym{IDE}{\textsc{IDE}}{\emph{Integrated development environment}}
+\newacronym{FTP}{\textsc{FTP}}{\emph{File Transfer Protocole}}
+\newacronym{HTML}{\textsc{HTML}}{\emph{HyperText Markup Language}}
+\newacronym{ODD}{\textsc{ODD}}{\emph{One Document Does it all}}
+\newacronym{TEI}{\textsc{TEI}}{\emph{Text Encoding Initiative}}
+\newacronym{DTD}{\textsc{DTD}}{\emph{Document Type Definition}}
+
 % COMMANDS
 \newcommand{\enc}{École nationale des chartes\xspace}
 \newcommand{\fair}{\gls{fair}\xspace}
@@ -54,107 +78,132 @@
 \newcommand{\IR}{\gls{IR}\xspace}
 \newcommand{\LSC}{\gls{LSC}\xspace}
 \newcommand{\EPJ}{\gls{EPJ}\xspace}
+\newcommand{\code}{\og code virtuel \fg \xspace}
+\newcommand{\POC}{\gls{POC}\xspace}
+\newcommand{\ANR}{\gls{ANR}\xspace}
+\newcommand{\XML}{\gls{XML}\xspace}
+\newcommand{\IIIF}{\gls{IIIF}\xspace}
+\newcommand{\JSON}{\gls{JSON}\xspace}
+\newcommand{\genyuan}{\textit{Da Qing lüli genyuan}\xspace}
+\newcommand{\huidian}{\textit{Huidian shili}\xspace}
+\newcommand{\dc}{\textit{Duli cunyi}\xspace}
+\newcommand{\dq}{\textit{Da Qing lüli}\xspace}
+\newcommand{\dqlj}{\textit{Da Qing lü jijie fuli\xspace}}
+\newcommand{\SQL}{\gls{SQL}\xspace}
+\newcommand{\SGBD}{\gls{SGBD}\xspace}
+\newcommand{\IDE}{\gls{IDE}\xspace}
+\newcommand{\FTP}{\gls{FTP}\xspace}
+\newcommand{\HTML}{\gls{HTML}\xspace}
+\newcommand{\ODD}{\gls{ODD}\xspace}
+\newcommand{\TEI}{\gls{TEI}\xspace}
+\newcommand{\lu}{\textit{lü}\xspace}
+\newcommand{\li}{\textit{tiaoli}\xspace}
+\newcommand{\DTD}{\gls{DTD}\xspace}
 
 % Pour retirer le titre courant d'une page vide avant un chapitre
 \newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
 % Pour des sections non numérotées dans la table des matière
 \newcommand\chapterNo[1]{
-	\chapter*{#1}
-	\markright{\MakeUppercase{#1}}
+  \chapter*{#1}
+  \markright{\MakeUppercase{#1}}
 }
 
 \begin{document}
+
+\onehalfspacing 
+
+\frontmatter
+
+    \include{templates/page-titre}
+
+    \thispagestyle{empty}	
+    \cleardoublepage
 	
-	\onehalfspacing 
+    \include{templates/resume}
 	
-	\frontmatter
-	
-	\include{templates/page-titre}
-	
-	\thispagestyle{empty}	
-	\cleardoublepage
-	
-	\include{templates/resume}
-	
-	\chapterNo{Remerciements}
-	\addcontentsline{toc}{chapter}{Remerciements}
-	
-	\chapterNo{Introduction}
-	\addcontentsline{toc}{chapter}{Introduction}
-	
-	\thispagestyle{empty}
-	\cleardoublepage
-	
-	\mainmatter
-	
-	\part{Le projet \COREL, un projet de recherche inter-institutionnel}
-	\chapter{Le projet \COREL}
-	Le projet \COREL est un projet de recherche inter-institutionnel entre le \cdf et l'\EFEO. Ce projet pluridisciplinaire réunit les humanités numériques et l'histoire du droit chinois et initie ainsi la collaboration entre historiens du droit, sinologues et ingénieurs en sciences humaines.
-	\include{templates/chap1}
-	
-	
-	\clearemptydoublepage
-	
-	\chapter{Le corpus}
-	\include{templates/chap2}
-	
-	\clearemptydoublepage
-	
-	\chapter{Traitement et structuration d'un corpus documentaire}
-	\include{templates/chap3}
-	
-	\clearemptydoublepage
-	
-	
-	\part{La préparation des données à l’initialisation d’un projet, enjeux de l’encodage en XML-TEI}
-	\chapter{Initialisation et démarrage du projet}
-	\include{templates/chap4}
-	
-	\clearemptydoublepage
-	
-	\chapter{L’encodage en XML-TEI : un format standard des données}
-	\include{templates/chap5}
-	
-	
-	\clearemptydoublepage
-	
-	\chapter{Définir le modèle de données du projet}
-	\include{templates/chap6}
-	
-	
-	\clearemptydoublepage
-	
-	\part{La mise à disposition des données pour les chercheurs : comment agréger des sources partielles grâce au numérique ?}
-	\chapter{La mise en place d’un outil open source pour les chercheurs}
-	\include{templates/chap7}
-	
-	\clearemptydoublepage
-	
-	\chapter{Les bases de données document pour agréger des sources partielles}
-	\include{templates/chap8}
-	
-	
-	\clearemptydoublepage
-	
-	\chapter{Assurer un outil pérenne}
-	\include{templates/chap9}
-	
-	
-	\clearemptydoublepage
-	
-	\chapterNo{Conclusion}
-	\addcontentsline{toc}{chapter}{Conclusion}
-	
-	\appendix
-	\part*{Annexes}	
-	\addcontentsline{toc}{part}{Annexes}
-	
-	\clearemptydoublepage
-	
-	\backmatter
-	\printacronyms[title=Liste des acronymes,toctitle=Acronymes]
-	\printglossary 
-	\printbibliography
-	\tableofcontents
+    \chapterNo{Remerciements}
+    \addcontentsline{toc}{chapter}{Remerciements}
+    
+    \chapterNo{Introduction}
+    \addcontentsline{toc}{chapter}{Introduction}
+
+    \thispagestyle{empty}
+    \cleardoublepage
+
+\mainmatter
+
+    \part{Le projet \COREL, un projet de recherche inter-institutionnel}
+        \chapter{Le projet \COREL}
+        Le projet \COREL est un projet de recherche inter-institutionnel entre le \cdf et l'\EFEO. Ce projet pluridisciplinaire réunit les humanités numériques et l'histoire du droit chinois et initie ainsi la collaboration entre historiens du droit, sinologues et ingénieurs en sciences humaines.
+                    \include{templates/chap1}
+            
+            
+        \clearemptydoublepage
+        
+        \chapter{Le corpus}
+        Le projet \COREL s'inscrit dans un champ disciplinaire particulier, au croisement de la sinologie et de l'histoire du droit. Développer l'accès à des ressources encore peu diffusées dans le domaine des humanités numériques constitue un enjeu majeur du projet. 
+                    \include{templates/chap2}
+            
+        \clearemptydoublepage
+        
+        \chapter{Traitement et structuration d'un corpus documentaire}
+                    \include{templates/chap3}
+            
+        \clearemptydoublepage
+
+
+    \part{La préparation des données à l’initialisation d’un projet, enjeux de l’encodage en XML-TEI}
+        \chapter{Initialisation et démarrage du projet}
+                    \include{templates/chap4}
+            
+        \clearemptydoublepage
+        
+        \chapter{L’encodage en XML-TEI : un format standard des données}
+                    \include{templates/chap5}
+             
+            
+        \clearemptydoublepage
+        
+        \chapter{Définir le modèle de données du projet}
+                    \include{templates/chap6}
+             
+            
+        \clearemptydoublepage
+
+    \part{La mise à disposition des données pour les chercheurs : comment agréger des sources partielles grâce au numérique ?}
+    \chapter{Les bases de données document pour agréger des sources partielles}
+                    \include{templates/chap7}
+            
+        \clearemptydoublepage
+        
+        \chapter{La mise en place d’un outil open source pour les chercheurs}
+                    \include{templates/chap8}
+             
+            
+        \clearemptydoublepage
+        
+        \chapter{Assurer un outil pérenne}
+                    \include{templates/chap9}
+             
+            
+        \clearemptydoublepage
+    
+    \chapterNo{Conclusion}
+    \addcontentsline{toc}{chapter}{Conclusion}
+
+\appendix
+    \part*{Annexes}	
+    \addcontentsline{toc}{part}{Annexes}
+
+\clearemptydoublepage
+
+\backmatter
+    \printacronyms[title=Liste des acronymes,toctitle=Acronymes]
+    \addcontentsline{toc}{chapter}{\listfigurename}
+    \listoffigures
+    \printglossary 
+    \printbibliography[keyword={histoire}, title={Histoire du droit chinois}]
+    \printbibliography[keyword={edition}, title={Édition scientifique numérique}]
+    \tableofcontents
 	
 \end{document}
