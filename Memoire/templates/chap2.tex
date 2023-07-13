@@ -74,14 +74,89 @@ En comparant ce code \XML à l'affichage du site, il est possible d'établir cla
     \centering
     \includegraphics[width=\textwidth]{images/image1.png}
     \caption{Capture d'écran du site web \LSC - affichage du code \XML dans l'encadré.}
-    \label{Capture d'écran du site web \LSC}
 \end{figure}
 
-Cette utilisation de l'encodage relève du mode de travail des chercheurs sur le projet. En effet, à partir de textes issus de l'OCR, le texte est saisi et balisé dans le logiciel Oxygen au fur et à mesure du projet, c'est-à-dire que l'encodage des données et le développement du site s'effectuent en parallèle. Dès lors, le site web devient un outil de validation de la saisie des données : ce lien entre l'encodage et l'affichage permet aux chercheurs débutants en humanités numériques de vérifier leur code en mettant le site à jour, les erreurs d'affichages se repérant plus facilement qu'un oubli dans le code \XML. 
+Cette utilisation de l'encodage relève du mode de travail des chercheurs sur le projet. En effet, à partir de textes issus de l'\OCR, le texte est saisi et balisé dans le logiciel Oxygen au fur et à mesure du projet, c'est-à-dire que l'encodage des données et le développement du site s'effectuent en parallèle. Dès lors, le site web devient un outil de validation de la saisie des données : ce lien entre l'encodage et l'affichage permet aux chercheurs débutants en humanités numériques de vérifier leur code en mettant le site à jour, les erreurs d'affichages se repérant plus facilement qu'un oubli dans le code \XML. 
 
 Mettre en parallèle les étapes d'encodage et de création du site internet relève du choix des chercheurs du projet d'utiliser un schéma \XML entièrement customisé. En effet, ce schéma n'est pas documenté et aucune \DTD n'a été produite pour valider l'encodage et contraindre ce schéma. Le projet \LSC continue aujourd'hui d'être alimenté par les chercheurs du projet \COREL. Dès lors, le seul moyen de se repérer dans un schéma sans documentation ni règles de validation devient l'affichage du site internet.
 
 \subsubsection{Structure des sources numériques}
+Sans documentation claire ni schéma de validation, comprendre la structure des sources numériques et les choix d'encodage est une étape essentielle du projet. En effet, il est difficile de comprendre au premier coup d'oeil le schéma utilisé pour encoder les sources sans avoir travaillé pour le projet \LSC et sans connaissances solides des textes de lois chinois. De plus, au fil du temps, les sources numériques ont été encodées par de nombreuses personnes, contribuant au projet \LSC ou bien au projet \COREL. L'encodage n'étant pas contraint et les objectifs des deux projets étant différents, les sources numériques ont parfois évolué et l'encodage des texte peut présenter des variantes d'encodage d'un texte à l'autre, voire au sein d'un même document. 
+
+L'encodage \LSC prend comme point de départ la structure des sources originales en chapitres, sections, lois principales et secondaires, mais vient ajouter des éléments supplémentaires selon les spécificités de chaque document. Par exemple, le \huidian propose des listes de lois classées par année. Cet élément est propre à ce texte de lois et a nécessité un encodage différent, traduit par un élément \texttt{<enum>} contenant un ou plusieurs \texttt{<item>} et une balise \texttt{<date>}.
+
+De plus, le projet \LSC est un projet d'édition scientifique numérique trilingue. Tous les documents ont donc été encodés en chinois, français et anglais. Chaque balise apparaît donc trois fois, avec un attribut de langue différent. 
+\begin{minted}{xml}
+    <title lang="ch">Wuxing 五刑</title>
+    <title lang="en">The Five Punishments</title>
+    <title lang="fr">Les Cinq peines</title>
+\end{minted}
+Toutefois, ces choix manquent d'uniformité dans l'encodage, car certaines balises ne sont pas triples et contiennent des informations hybrides entre plusieurs langues :
+\begin{minted}{xml}
+    <title lang="ch">目錄 | Content</title>
+\end{minted}
+D'autre part, la traduction des textes n'a jamais été achevée pendant le financement du projet \LSC. Il existe ainsi de nombreuses balises auto-fermantes dans l'encodage \XML, qui laissent la place à une traduction qui n'a pas de garantie de voir le jour, d'autant plus que le projet \COREL n'inclut pas les traductions dans son périmètre. 
+
+Le trinlinguisme initial du projet \LSC semble à première vue être un élément que l'on peut aisément écarter du projet \COREL. Toutefois, il a des conséquences directes dans l'encodage. En effet, outre les nombreuses balises auto-fermantes qui rendent le code dense, il est possible d'observer une substitution progressive entre la balise \texttt{<content>} censée séparer les différentes traductions et la balise \texttt{<p>} qui permet de séparer les différents paragraphes. Puisque la balise \texttt{<content>} n'est pas effective dans le cadre du projet \COREL et systématiquement laissée vide pour le français et l'anglais, son utilisation première s'est parfois perdue et s'est substituée à la balise \texttt{<p>} lorsque le texte chinois ne contenait qu'un seul et unique paragraphe. 
+
+Par ailleurs, le choix d'éditer des documents trilingues s'est aussi reflété dans la création du schéma d'encodage. Si les éléments les plus courants, comme les titres, possèdent des noms de balises en anglais, ce n'est pas le cas de la plupart des éléments structurants des sources. Ainsi, les chapitres sont balisés grâce à l'élément \texttt{<bu>}, les sections \texttt{<men>}, etc. Certaines balises viennent également rappeler le français, comme la balise \texttt{<inf>} qui vient signaler des caractères de police \textit{inférieure}. 
+
+Tous ces éléments aboutissent à la création de sources numériques extrêmement spécifiques et viennent restreindre la communauté qui peut contribuer au projet ou en bénéficier, car seules quelques personnes possèdent toutes les clefs de compréhension pour déchiffrer ce support de travail. 
 
 \subsection{La numérisation des codes légaux}
+\subsubsection{\IIIF et annotations}
+En plus des données produites par le projet \LSC, le projet \COREL hérite aussi des sources produites par le projet \EPJ. Les numérisations des textes de lois ont été déposées sur un serveur \IIIF géré par Data Futures. Les chercheurs ont ensuite accès à un visualiseur Mirador qui leur permet de segmenter les images pour expliciter la structure des codes légaux en chapitres, sections, \lu et \li. Cette segmentation permet de mettre en valeur un caractère annonçant le début d'une nouvelle partie. 
 
+\newpage
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=100mm]{images/image2.png}
+    \caption{Numérisation du \dc, segmentation du début du \li 1-1}
+\end{figure}
+
+Ces caractères qui marquent le début d'un élément structurant du document ont ensuite été annotés par les chercheurs. Le prestataire a mis en place un tableau à remplir pour annoter les passages segmentés. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/image3.png}
+    \caption{Interface d'annotation du visualiseur Mirador}
+\end{figure}
+Cette pratique a permis aux chercheurs de produire des annotations structurées et uniformes d'un texte à l'autre. Dans ce cadre figurent notamment des informations sur la date de début de validité des lois et des liens de généalogie. 
+
+\newpage
+\subsubsection{Généalogie des lois}
+Ce travail d'annotation et de segmentation des textes, toujours en cours en parallèle du projet \COREL, a pour objectif de retracer la généalogie des lois. Les annotations sont remplies à partir d'un référentiel. Ce référentiel prend comme source de départ le \genyuan. C'est un fichier texte disponible en ligne, hébergé par Data Futures. Il recense chaque loi une à une, généralement avec le lien vers la numérisation correspondante, et indique deux types de liens. Le premier est un lien d'association simple. Il indique les correspondances entre la loi du \genyuan à une loi d'un autre document. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/image4.png}
+    \caption{Modélisation d'un lien d'association entre deux lois}
+    \label{Modélisation d'un lien d'association entre les lois}
+\end{figure}
+
+Ce lien d'association simple est à indiquer dans les rangs \textit{related} des annotations. Elles indiquent les lois associées à celle de l'image dans les autres textes de lois, chaque lettre correspondant à une source textuelle différente : h pour \huidian, g pour \genyuan, d pour \dc et c pour \dq. 
+
+Le référentiel indique également un deuxième type de lien, qui n'est pas présent dans les annotations des images. C'est un lien d'association dirigée, qui indique des liens de généalogie entre les lois. Pour distinguer ces liens de généalogie des liens d'association simple, les chercheurs ont mis en place dans le référentiel un vocabulaire spécifique à ces liens. Les liens \og \textit{in} \fg indiquent qu'une loi est issue d'une autre, et les liens \og \textit{out} \fg indiquent qu'une loi donne naissance à une autre.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/image5.png}
+    \caption{Modélisation des liens d'association dirigée entre deux lois}
+\end{figure}
+
+Lorsque les informations du référentiel sont retranscrites dans les annotations, elles sont stockées dans des fichiers \JSON que le prestataire fournit à l'équipe du projet. Toutefois, ces données ne sont que partiellement accessible car le projet dispose uniquement des fichiers correspondant aux annotations, sans le manifeste \IIIF, ne donnant pas accès aux métadonnées, lesquelles sont accessibles uniquement via une plateforme gérée par Data Futures aux utilisateurs connectés. Cet accès se fait uniquement en interface graphique, ces données ne sont donc pas exploitables. De plus, l'annotation des images étant toujours en cours de saisie, les fichiers \JSON sont encore incomplets, puisque les valeurs ne sont pas encore entièrement saisies. Dans cet exemple, la date de début de validité de la loi n'a pas encore été saisie. 
+
+\begin{minted}{json}
+    {
+            "chars" : "",
+            "format" : "text/plain",
+            "@type" : "freizo:date"
+         },
+         {
+            "chars" : "254",
+            "@type" : "freizo:number"
+         },
+\end{minted}
+
+Ces données, en plus d'être partielles et toujours en cours de saisie, contiennent parfois des informations qui sont encore à expliciter. C'est notamment le cas du champ de date des annotations. À l'intérieur de celui-ci, les chercheurs entrent la date de début de validité d'une loi. Pour retrouver la date de fin, il est nécessaire de passer par les liens de généalogie. À partir d'un lien \textit{in}, il faut alors déduire que la date de début d'une loi B met fin à la période de validité d'une loi A. 
+
+Les données à disposition du projet \COREL sont donc entièrement issues des deux projets précédents. Pensées et produites à des fins différentes, ces sources numériques ne sont pas liées entre elles, en plus d'être produites dans des formats différents. 

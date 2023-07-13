@@ -22,7 +22,6 @@
 \setlength\parindent{1cm}
 
 \usepackage{graphicx}
-\graphicspath{ {./images/} }
 
 \usepackage[backend=biber, sorting=nyt, style=enc, minbibnames=10, maxbibnames=10]{biblatex}
 \addbibresource{bibliographie/bibliographie.bib}
@@ -59,9 +58,10 @@
 \newacronym{IDE}{\textsc{IDE}}{\emph{Integrated development environment}}
 \newacronym{FTP}{\textsc{FTP}}{\emph{File Transfer Protocole}}
 \newacronym{HTML}{\textsc{HTML}}{\emph{HyperText Markup Language}}
-\newacronym{ODD}{\textsc{ODD}}{\emph{One Document Does it all}}
+\newacronym{ODD}{\textsc{ODD}}{\emph{One Document Does It All}}
 \newacronym{TEI}{\textsc{TEI}}{\emph{Text Encoding Initiative}}
 \newacronym{DTD}{\textsc{DTD}}{\emph{Document Type Definition}}
+\newacronym{OCR}{\textsc{OCR}}{\emph{Optical Character Recognition}}
 
 % COMMANDS
 \newcommand{\enc}{École nationale des chartes\xspace}
@@ -99,6 +99,9 @@
 \newcommand{\lu}{\textit{lü}\xspace}
 \newcommand{\li}{\textit{tiaoli}\xspace}
 \newcommand{\DTD}{\gls{DTD}\xspace}
+\newcommand{\cv}{\og code virtuel \fg}
+\newcommand{\tp}{\textit{TEI Publisher}\xspace}
+\newcommand{\OCR}{\gls{OCR}\xspace}
 
 % Pour retirer le titre courant d'une page vide avant un chapitre
 \newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
@@ -132,8 +135,8 @@
 
 \mainmatter
 
-    \part{Le projet \COREL, un projet de recherche inter-institutionnel}
-        \chapter{Le projet \COREL}
+    \part{Le projet COREL, un projet de recherche inter-institutionnel}
+        \chapter{Le projet COREL}
         Le projet \COREL est un projet de recherche inter-institutionnel entre le \cdf et l'\EFEO. Ce projet pluridisciplinaire réunit les humanités numériques et l'histoire du droit chinois et initie ainsi la collaboration entre historiens du droit, sinologues et ingénieurs en sciences humaines.
                     \include{templates/chap1}
             
@@ -194,6 +197,7 @@
 \appendix
     \part*{Annexes}	
     \addcontentsline{toc}{part}{Annexes}
+    \include{annexes/}
 
 \clearemptydoublepage
 
