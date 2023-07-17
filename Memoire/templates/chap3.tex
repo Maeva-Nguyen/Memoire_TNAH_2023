@@ -12,60 +12,22 @@ Dès mon entrée en stage, j'ai été confrontée à ces contraintes d'organisat
 Appréhender les différentes sources, originales ou numériques, a été une difficulté supplémentaire. Le projet dispose d'un corpus assez restreint de cinq textes de lois, mais les données numériques qui en résultent sont multiples et hétérogènes. Il a donc fallu identifier en premier lieu les différentes étapes du travail déjà effectué. Les codes légaux ont d'abord été numérisés par la bibliothèques d'études chinoises puis océrisés. Les données de l'\OCR ont ensuite été encodées en \XML et publiées sur le site \LSC. L'encodage est encore en cours et le texte de l'\OCR est en train d'être corrigé. Les numérisations des codes ont ensuite été confiées au prestataire Data Futures et téléchargées sur un serveur \IIIF. Ces images ont d'abord été segmentées puis annotées. Les annotations sont en cours de corrections et d'enrichissement. 
 
 \subsubsection{Les besoins émergents}
-La présentation qui m'a été faite du projet et du travail déjà amorcé a permis aux chercheurs d'évoquer par la même occasion les besoins du projet. 
-%difficultés à appréhender les différentes sources différentes et non liées, à démêler le travail des projets précédents VS le travail du projet COREL (qui, au final, n'est qu'en phase d'élaboration ?)
-%les besoins qui émergent / un projet un peu à l'arrêt : site web de l'ancien projet qui ne convient plus, le propriétaire ne répond plus, pourtant on continue d'alimenter ces données. Le schéma xml ne convient plus non plus car on veut rajouter du nouveau contenu. 
-%pas de pistes pour savoir comment réaliser le projet
-%difficultés à définir clairement le périmètre du projet
+La présentation qui m'a été faite du projet et du travail déjà amorcé a permis aux chercheurs d'évoquer par la même occasion les besoins du projet. De ces données multiples dans des formats différents et non liés entre eux, a émergé l'axe principal du stage : comment utiliser les données des projets précédents et les adapter au projet \COREL afin de pouvoir commencer la réalisation des livrables attendus ? De prime abord, il m'a été difficile de séparer clairement les données issues des différents projets et de comprendre qu'il n'existait pas de données spécifiquement produites pour le projet \COREL. Toutefois, il était clair dès les premières réunions que les chercheurs ne savaient pas comment utiliser les productions \LSC et \EPJ pour le projet et que dans le cas du schéma \XML, les données n'étaient pas adaptées et freinaient le bon déroulement du projet. En effet, le schéma figé du projet \LSC ne répondait plus aux besoins des chercheurs qui souhaitaient par exemple ajouter des commentaires aux textes de lois déjà encodés. De plus, ce schéma se révélait trop peu flexible pour encoder les liens d'association entre les lois. 
+
+Outre la nécessité de réadapter les données pour le projet, les chercheurs ne disposaient pas non plus d'outils open-source pour réaliser le projet. Cette problématique s'illustre en particulier avec le site web \LSC, laissé à l'abandon par son propriétaire. Les chercheurs du projet avaient le moyen d'enrichir les pages des codes légaux déjà implémentées sur le site internet via \FTP, mais ne pouvaient pas modifier le site, par exemple en y ajoutant de nouvelles pages. Le schéma \XML et le site \LSC étant liés, ces deux problèmes vont de paire et résultent de la création d'un site et d'un schéma soumis à un tiers, c'est pourquoi les chercheurs, lors des réunions de réflexion autour du projet, ont insisté sur le besoin d'utiliser des outils open source, faciles à prendre en main afin de pouvoir être le plus autonomes et indépendants possible. 
 
 
  \section{Un projet en phase d’initialisation}
     \subsection{Définition de la mission de stage}
+Le stage a pour objectif de fixer un cahier des charges fonctionnel qui contextualise le projet et en donne un état des lieux exhaustif, incluant les données produites par les projets \LSC et \EPJ. Les objectifs, les besoins et les livrables attendus à la fin du projet seront détaillés le plus clairement possible, permettant à un ingénieur ou à un prestataire de saisir immédiatement la teneur du projet. Un calendrier prévisionnel jusqu’à la fin du financement \CollEx Persée, en octobre 2024 sous la forme d’un diagramme de Gantt devra être fourni. Ce cahier des charges a pour objectif de mettre à l’écrit le plus clairement possible tous les aspects attendus du projet et d’en définir clairement le périmètre. Des maquettes du site internet et des modélisations \UML des interactions des utilisateurs (à la fois front et back-office) seront également incluses dans le cahier des charges, afin de faciliter le développement du site web et de mieux appréhender les besoins des utilisateurs. 
 
-§ Paragraphe 1
+En parallèle de ce cahier des charges, je dois commencer à mettre en place une chaîne de traitement pour la transformation des documents en \XML \TEI via une feuille de style \XSL. Les données présentes dans le document \XML devront être transformées en un document \TEI valide. Cependant, toutes les données nécessaires à la réalisation du projet ne sont pas contenues dans les documents \XML source. Un échantillon d’un document \TEI sera donc proposé afin de montrer à quoi ressembleront les documents finaux. La rédaction d’une ODD permettra de venir expliquer les pratiques d’encodages recommandées pour ce corpus. Les livrables produits pendant le stage permettront de définir les données nécessaires à la conception du site internet attendu et d’initialiser la phase de réalisation du projet. 
 
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
-
-§ Paragraphe 2
-
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
-
-§ Paragraphe 3
-
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
 
 \subsection{Les enjeux de la mission}
+L'enjeu principal de la mission est de pouvoir lancer la phase de démarrage du projet. En effet, lors de mon entrée en stage, le projet est ralenti par deux problématiques majeures : l'inadaptation des données au projet et leur absence de lien entre elles, et le besoin de rédiger un cahier des charges fonctionnels pour définir clairement les livrables attendus et délimiter le périmètre du projet, qui possède de nombreuses perspectives d'évolution. Ces deux aspects de la mission de stage sont essentiel afin de permettre aux chercheurs de travailler sur la réalisation des livrables et non plus l'enrichissement de données dans des formats inadaptés. Les étapes de nettoyage et de préparation des données sont essentielles à la bonne réalisation du projet et le stage doit permettre de mettre en place la chaîne de traitement des données et d'établir un modèle de données idéal pour l'ajout de données supplémentaires, qui n'ont pas été produites lors des projets précédents et sont propres aux objectifs du projet \COREL.
 
-§ Paragraphe 1
-
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
-
-§ Paragraphe 2
-
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
-
-§ Paragraphe 3
-
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
-
+De plus, le cahier des charges fonctionnel devra inclure une partie de préconisation d'un outil open-source que les chercheurs pourront utiliser pour réaliser le projet, en tout ou en partie. Les caractéristiques de cet outil qui répondent aux besoins du projet devront être clairement explicitées pour permettre à un prestataire d'en saisir les enjeux et de mieux définir les fonctionnalités du back-office qui sont nécessaires aux chercheurs pour alimenter le site internet (ajout, modification ou suppression de contenu notamment). À l'issue du stage, les livrables produits doivent permettre à l'équipe de poursuivre la préparation des données avec les données supplémentaires apportées par le prestataire et/ou les chercheurs et de commencer à réaliser le site internet. 
 
 \section{Les contraintes inhérentes au projet}
     \subsection{S’inscrire dans la continuité de deux projets de recherches}
