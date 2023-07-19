@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="ODD_COREL.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="ODD_COREL.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title xml:lang="ch">Da Qing lüli- version du Duli cunyi 大清律例-讀例存疑 (1906)</title>
+         </titleStmt>
+         <editionStmt>
+            <edition> This edition was encoded for the COREL project, in order to publish a corpus
+               of documents on legal history of Imperial China.</edition>
+            <respStmt>
+               <resp>XSLT Transformation made by</resp>
+               <persName>
+                  <surname>Nguyen</surname>
+                  <forename>Maëva</forename>
+               </persName>
+            </respStmt>
+         </editionStmt>
+         <publicationStmt>
+            <authority>Le Collège de France</authority>
+            <authority>École Française d'Extrême-Orient</authority>
+            <pubPlace>Paris</pubPlace>
+            <date when="2023-07">July 2023</date>
+            <availability>
+               <licence target="https://www.etalab.gouv.fr/licence-ouverte-open-licence/">Attribution-ShareAlike
+                  Open licence Etalab</licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p> The XML documents we transformed into XML-TEI were originally edited and published
+               by the LSC project. The editions are available online on their website as a
+               trilingual edition of the codes. <bibl>
+                  <title xml:lang="ch">Da Qing lüli- version du Duli cunyi 大清律例-讀例存疑 (1906)</title>,
+                  originally published in <date when="1906">1906</date>
+               </bibl>
+            </p>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <particDesc>
+            <listPerson>
+               <person xml:id="覺羅伍拉納">
+                  <persName role="governor" ref="#覺羅伍拉納">
+                     <roleName>福建巡撫</roleName>
+                     <name>覺羅伍拉納</name>
+                  </persName>
+                  <note>Biographical information</note>
+               </person>
+               <person xml:id="何東山">
+                  <persName role="party" ref="#何東山">
+                     何東山
+                  </persName>
+                  <note>Biographical information</note>
+               </person>
+               <person xml:id="何適">
+                  <persName role="party" ref="#何適">
+                     何適
+                  </persName>
+                  <note>Biographical information</note>
+               </person>
+            </listPerson>
+         </particDesc>
+         <settingDesc>
+            <listPlace>
+               <place xml:id="寧古塔">
+                  <placeName ref="#寧古塔">
+                     寧古塔
+                  </placeName>
+                  <note>Information about the place</note>
+               </place>
+            </listPlace>
+         </settingDesc>
+      </profileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p> This XML-TEI encoding is based on the transformation of XML documents, in order to
+               publish a digital edition of the Qing's codes (1644-1911) for the COREL project. This
+               edition differs from the previous one in XML : it was made to put an accent on the
+               original sources' structure and provide an example of how to encode legal sources.
+               The present document is a sample, encoded to show how our documents are supposed to be encoded
+               in the future, in order to publish our digital edition.
+            </p>
+         </projectDesc>
+      </encodingDesc>
+   </teiHeader>
+   <text xml:lang="ch" xml:id="DuliCunyi">
+      <body>
+         <div type="chapter" n="6">
+            <pb facs="https://duli-cunyi.freizo.org/mirador/book.cgi?catno=28941&amp;canvas=https://iiif.duli-cunyi.freizo.org/image/28941/canvas/p1"/>
+            <head>Xinglü 刑律</head>
+            <div type="section" n="25">
+               <pb  facs="https://duli-cunyi.freizo.org/mirador/book.cgi?catno=28941&amp;canvas=https://iiif.duli-cunyi.freizo.org/image/28941/canvas/p1"/>
+               <head>Xinglü yi zeidao shang zhiyi
+                  刑律一賊盜上之一<note type="official">《箋釋》：賊，害也。害及生民，流毒天下，故曰賊。盜則止於一身一家一處而已。自首至妖言三條係賊，餘皆盜也。</note>性lü yi zei dao shang
+                  zhi yi</head>
+               <div type="statute" n="254" xml:id="DQLL_254" notBefore="1725" notAfter="1870">
+                  <pb facs="https://duli-cunyi.freizo.org/mirador/book.cgi?catno=28941&amp;canvas=https://iiif.duli-cunyi.freizo.org/image/28941/canvas/p3"/>
+                  <head>Moufan dani 謀反大逆</head>
+                  <p>凡謀反<note type="official">不利於國，謂謀危社稷</note>及大逆<note type="official">不利於君，謂謀毀宗廟、山陵及宮闕</note>，但共謀者，不分首從<note type="official">已未行</note>，皆凌遲處死。<note type="official">正犯之</note>祖父、父、子孫、兄弟及同居之人<note type="official">如本族無服親屬及外祖父、妻父、女壻之類</note>，不分異姓及<note type="official">正犯之期親</note>伯叔父、兄弟之子，不限<note type="official">已未析居</note>籍之同異，<note type="official">男</note>年十六以上，不論篤疾、廢疾，皆斬。其<note type="official">男</note>十五以下，及<note type="official">正犯之</note>母、女、妻妾、姊妹、若子之妻妾，給付功臣之家為奴。<note type="official">正犯</note>財産入官。若女<note type="official">兼姊妹</note>許嫁已定，歸其夫。<note type="official">正犯</note>子孫過房與人，及<note type="official">正犯之</note>聘妻未成者，俱不追坐。<note type="official">上止坐正犯兄弟之子，不及其孫。餘律文不載，并不得株連。</note>知情故縱隱藏者，斬。有能捕獲<note type="official">正犯</note>者，民授以民官，軍授以軍職<note type="official">量功授職</note>，仍將犯人財産全給充賞。知而首告，官為捕獲者，止給財産。<note type="official">雖無故縱，但</note>不首者，杖一百、流三千里。<note type="official">未行，而親屬告捕到官，正犯與緣坐人俱同自首，免。已行，惟正犯不免，餘免。非親屬首捕，雖未行，仍依律坐。</note>
+                  </p>
+                  <note type='ABC'>此仍明律，其小註係順治三年増修，雍正三年刪定。</note>
+                  <div type="substatute" n="1" xml:id="DQLL_254_1" notBefore="1833" notAfter="1870">
+                     <pb  facs="https://duli-cunyi.freizo.org/mirador/book.cgi?catno=28941&amp;canvas=https://iiif.duli-cunyi.freizo.org/image/28941/canvas/p5"/>
+                     <p>一、反逆案内律應問擬凌遲之犯，其子孫訊明，實係不知謀逆情事者，無論已未成丁，均解交内務府閹割，發往新疆等處，給官兵為奴。如年在十歲以下者，牢固監禁，俟年届十一歲時，再行解交内務府，照例辦理。内務府大臣遇有解到閹割人犯，即遴派司員認眞看驗，並出具無弊切結，送交刑部，再行覆驗。如有情弊，即行奏參，務須查驗明確，再交兵部，發往新疆，給官兵為奴。至其餘律應緣坐男犯，並非逆犯子孫，年在十六歲以上者，發往新疆等處，給官兵為奴。如年在十五歲以下者，牢固監禁，俟成丁時再行發遣。緣坐婦女，發各省駐防，給官員兵丁為奴。其知情不首干連人犯，仍依律擬流。</p>
+                  <note type='metadata'>Notes on the law</note>
+                  </div>
+               <note type='XYZ'>此例原係二條。一係康熙年間現行例，雍正三年修改。一係乾隆五十六年，刑部題覆
+                  <persName role="governor" ref="#覺羅伍拉納">
+                     <roleName>福建巡撫</roleName>
+                     <name>覺羅伍拉納</name>
+                  </persName>
+                  題續獲逆犯
+                  <persName role="party" ref="#何東山">
+                     何東山
+                  </persName>
+                  之姪
+                  <persName role="party" ref="何適">
+                     何適
+                  </persName>，
+                  年已十八，依律問擬斬決一案，奉旨纂輯為例。（按，此律並不分別正犯子、孫及其餘縁坐男犯，仍照律以十六歳以上、十五歳以下為生死之分，正犯之姪倶擬斬決。
+                  <persName role="party" ref="何適">
+                     何適
+                  </persName>
+                  一案，始奉旨閹割，已屬從寛，後改為專指逆犯子、孫，則逆犯之姪，即不在閹割之列矣。）嘉慶六年修併。其按語有，反逆案内干連流犯並妻子，倶流徙烏喇。係康熙二十一年定例。査反逆案内並無干連應流之犯，若知情不首，擬流，亦不僉妻發遣等語。（按，應流之犯謂流徙
+                  <placeName type="application" ref="#寧古塔">
+                     寧古塔
+                  </placeName>
+                  等處，非指知情不首一項也。此按語亦屬誤會。王命岳請免罪人及孥，疏有云，古者死罪之下爰有軍徒，為地不過二，三千里。比承明末蠱壞之餘，人心不古，百弊叢生。世祖章皇帝慮非大加創懲，不足以振肅紀綱，挽囘陋習，乃立為流徙之法，蓋亦不得已之權教耳。使數年之後，風俗丕變，人心還樸，未必不弛流徙而用軍徒也。文王治岐，罪人不孥，今則併父、母、兄、弟、妻、子流徙矣，其情罪重大者，連及祖、孫矣云云。觀此知流徙乃國初之法，非流犯也。例末二句似可刪去。）嘉慶十七年、道光六年、十三年修改，同治九年改定。</note>
+               <note type='XYZ'>謹按。唐律，謀反及大逆者皆斬。父、子年十六以上皆絞。十五以下及祖、孫、兄、弟皆沒官，伯叔父、兄弟之子皆流三千里，凡分三等。明律則祖父、子、孫、兄弟及伯叔父、兄弟之子皆擬駢斬，似屬過嚴。此例分別閹割、發遣，用法頗為平恕。惟祗言本犯子孫而未及其祖父，有犯，是否以其餘律應縁坐男犯論，記核。
+               □名例流囚家屬門載，實犯大逆之子孫，縁坐發遣為奴者，雖係職官及舉貢生監，倶不准出戸。此例既定為無論已未成丁，均行閹割為奴，則出戸與否，似可無庸深論，至其餘縁坐男犯，是否准其出戸，並未議及。
+               □竊謂此等人犯，既由斬決改為發遣，已屬從寛，酌給官兵為奴，似亦應不准出戸，以示區別，世為奴僕，不得齒於平人，亦古法也。謀逆人犯律，係並其祖父、子、孫及伯叔兄弟曁兄弟之子，均擬斬決。嗣由斬決改為監候，後又由監候改為發遣，例文屡改從輕，僅及正犯之子孫，其餘親屬及子孫，年幼者亦不問死罪，則較律為寛矣。
+               □逆犯之伯、叔、兄、弟與姪，均應縁坐，與子孫並無輕重之分，此例將逆犯子孫改從閹割，其弟姪等項均謂之其餘親屬，與例不符。
+               □縁坐婦女發各省駐防為奴。與下條參看。</note>
+               </div>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>

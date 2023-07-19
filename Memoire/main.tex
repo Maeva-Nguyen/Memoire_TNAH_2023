@@ -22,6 +22,10 @@
 \setlength\parindent{1cm}
 
 \usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{lscape}
+\usepackage{pdfpages}
+\usepackage{pdflscape}
 
 \usepackage[backend=biber, sorting=nyt, style=enc, minbibnames=10, maxbibnames=10]{biblatex}
 \addbibresource{bibliographie/bibliographie.bib}
@@ -64,6 +68,10 @@
 \newacronym{OCR}{\textsc{OCR}}{\emph{Optical Character Recognition}}
 \newacronym{UML}{\textsc{UML}}{\emph{Unified Modeling Language}}
 \newacronym{XSL}{\textsc{XSL}}{\emph{Extensible Stylesheet Language}}
+\newacronym{CSV}{\textsc{CSV}}{\emph{Coma Separated Values}}
+\newacronym{PDF}{\textsc{PDF}}{\emph{Portable Document Format}}
+\newacronym{TSV}{\textsc{TSV}}{\emph{Tab Separated Values}}
+\newacronym{OAI-PMH}{\textsc{OAI-PMH}}{\emph{Open Archives Initiative Protocole for Metadata Harvesting}}
 
 % COMMANDS
 \newcommand{\enc}{École nationale des chartes\xspace}
@@ -106,7 +114,12 @@
 \newcommand{\OCR}{\gls{OCR}\xspace}
 \newcommand{\UML}{\gls{UML}\xspace}
 \newcommand{\XSL}{\gls{XSL}}
-
+\newcommand{\cordel}{\textit{Démêler le Cordel}\xspace}
+\newcommand{\calendar}{\textit{Chinese Calendar Tools}\xspace}
+\newcommand{\csv}{\gls{CSV}\xspace}
+\newcommand{\pdf}{\gls{PDF}\xspace}
+\newcommand{\tsv}{\gls{TSV}\xspace}
+\newcommand{\oai}{\gls{OAI-PMH}\xspace}
 % Pour retirer le titre courant d'une page vide avant un chapitre
 \newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
 % Pour des sections non numérotées dans la table des matière
@@ -154,6 +167,7 @@
         \clearemptydoublepage
         
         \chapter{Traitement et structuration d'un corpus documentaire}
+        Dans le cadre du projet \COREL, le stage a pour objectif de mettre en place une chaîne de traitement des données, afin de les adapter à la reconstitution de la législation de la Chine impériale tardive et de les éditorialiser.
                     \include{templates/chap3}
             
         \clearemptydoublepage
@@ -196,12 +210,14 @@
         \clearemptydoublepage
     
     \chapterNo{Conclusion}
+    \pagestyle{empty}
     \addcontentsline{toc}{chapter}{Conclusion}
 
 \appendix
     \part*{Annexes}	
     \addcontentsline{toc}{part}{Annexes}
-    \include{annexes/}
+    \pagestyle{empty}
+    \include{annexes/cahier_des_charges}
 
 \clearemptydoublepage
 

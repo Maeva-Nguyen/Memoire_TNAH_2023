@@ -1,0 +1,1222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
+  xmlns:s="http://purl.oclc.org/dsdl/schematron">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>ODD for the COREL Project</title>
+        <author>
+          <persName>
+            <forename>Maëva</forename>
+            <surname>Nguyen</surname>
+          </persName>
+        </author>
+      </titleStmt>
+      <publicationStmt>
+        <authority>Collège de France</authority>
+        <authority>École Française d'Extrême Orient</authority>
+        <availability status="free">
+          <licence target="https://www.etalab.gouv.fr/licence-ouverte-open-licence/"
+            >Attribution-ShareAlike Open licence Etalab</licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>This ODD was made with oddbyexample.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div>
+        <head>Encoding Guide for the COREL project</head>
+        <div>
+          <head>Introduction</head>
+          <div>
+            <head>About the COREL project</head>
+            <p>The COREL project is a project between the Collège de France and EFEO. It is financed
+              by CollEx Persée and based on earlier research projects (Legalizing Space in China,
+              Emerging Procedural Justice). Its goal is to recreate the legislation of Imperial
+              China under the Qing Dynasty and to preserve a unique collection of documents about
+              legal, administrative and social history of modern China.</p>
+          </div>
+          <div>
+            <head>About this document</head>
+            <p>This document is an encoding guide to explain the choices and specificites of this
+              edition. It gives details about how we used the TEI to encode our corpus and focuses
+              on the TEI elements that we use in our edition. It is also meant to ensure consistency
+              in the encoding of our documents. </p>
+          </div>
+        </div>
+        <div>
+          <head>Encoding Guide</head>
+          <p>Legal codes are documents with a defined and regular structure, which is why encoding
+            such documents requires precise encoding rules to follow. This guide will present our
+            encoding choices.</p>
+          <div>
+            <head><gi>teiHeader</gi></head>
+            <p><gi>teiHeader</gi> is an element that contains the document's metadata. Our header is
+              written in English and contains the following elements : <specList>
+                <specDesc key="fileDesc"/>
+                <specDesc key="profileDesc"/>
+                <specDesc key="encodingDesc"/>
+              </specList></p>
+            <div>
+              <head><gi>fileDesc</gi></head>
+              <p><gi>fileDesc</gi> is composed of the following elements : <specList>
+                  <specDesc key="titleStmt"/>
+                  <specDesc key="editionStmt"/>
+                  <specDesc key="publicationStmt"/>
+                  <specDesc key="sourceDesc"/>
+                </specList></p>
+              <div>
+                <head><gi>titleStmt</gi></head>
+                <p><gi>titleStmt</gi> is a mandatory element. We use the chinese title transcribed
+                  with roman characters, followed by the title in chinese characters and the date of
+                  the code in parenthesis.</p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples"><titleStmt>
+                    <title xml:lang="ch">Da Qing lüli 大清律例 (1740)</title>
+                  </titleStmt></egXML>
+              </div>
+              <div>
+                <head><gi>editionStmt</gi></head>
+                <p><gi>editionStmt</gi> offers information about the online edition of the code. It
+                  contains the following elements : <specList>
+                    <specDesc key="edition"/>
+                    <specDesc key="respStmt"/>
+                  </specList></p>
+                <div>
+                  <head><gi>edition</gi></head>
+                  <p><gi>edition</gi> is an element that contains a brief description of the purpose
+                    of the online edition. It is the same for all the legal codes, as they were all
+                    encoded in XML-TEI specifically for this project. This description will differ
+                    for other documents that are not part of our corpus, but are meant to be encoded
+                    and published on our website in the future.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples"><edition> This edition was encoded
+                      for the COREL project, in order to publish a corpus of documents on legal
+                      history of Imperial China.</edition></egXML>
+                </div>
+                <div>
+                  <head><gi>respStmt</gi></head>
+                  <p><gi>respStmt</gi> is an element that contains the mentions of responsibility
+                    for the XSLT transformation and/or the TEI encoding. It must contain the element
+                      <gi>persName</gi> which includes the following elements : <specList>
+                      <specDesc key="forename"/>
+                      <specDesc key="surname"/>
+                    </specList></p>
+                </div>
+              </div>
+              <div>
+                <head><gi>publicationStmt</gi></head>
+                <p><gi>publicationStmt</gi> contains information about the publication of the online
+                  edition. It is composed of : <specList>
+                    <specDesc key="authority"/>
+                    <specDesc key="pubPlace"/>
+                    <specDesc key="date"/>
+                    <specDesc key="availability"/>
+                  </specList>
+                </p>
+              </div>
+              <div>
+                <head><gi>sourceDesc</gi></head>
+                <p>The <gi>sourceDesc</gi> element contains information about the first online
+                  edition of the code, and the title and date from the original source are contained
+                  by a <gi>bibl</gi> element.</p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <sourceDesc>
+                    <p> The XML documents we transformed into XML-TEI were originally edited and
+                      published by the LSC project. The editions are available online on their
+                      website as a trilingual edition of the codes. <bibl>
+                        <title xml:lang="ch">Da Qing lüli- version du Duli cunyi 大清律例-讀例存疑
+                          (1906)</title>, originally published in <date when="1906">1906</date>
+                      </bibl>
+                    </p>
+                  </sourceDesc></egXML>
+                <p>Additional information about the original sources can be also be contained by the
+                  element <gi>sourceDesc</gi>.</p>
+              </div>
+            </div>
+            <div>
+              <head><gi>profileDesc</gi></head>
+              <p> The <gi>profileDesc</gi> is an important element for this project because entities
+                (places and people) are linked to the evolution of the legal codes.The
+                  <gi>profileDesc</gi> contains two elements : <specList>
+                  <specDesc key="particDesc"/>
+                  <specDesc key="settingDesc"/>
+                </specList>
+              </p>
+              <div>
+                <head><gi>particDesc</gi></head>
+                <p>The <gi>particDesc</gi> element contains the list of <gi>persName</gi> present in
+                  the code. Each <gi>person</gi> is attributed <ref
+                    target="ODD_COREL.html#TEI.person">a mandatory <att>xml:id</att>
+                  </ref> and a <ref target="ODD_COREL.html#TEI.person">mandatory
+                    <att>role</att>.</ref> Inside the <gi>person</gi> element, the <gi>persName</gi>
+                  element must contain <ref target="ODD_COREL.html#TEI.persName">the <att>ref</att>
+                    attribute.</ref> Biographic notes about the person can be included if
+                  necessary.</p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <listPerson>
+                    <person xml:id="覺羅伍拉納">
+                      <persName role="governor" ref="#覺羅伍拉納">
+                        <roleName>福建巡撫</roleName>
+                        <name>覺羅伍拉納</name>
+                        <note>Biographical information</note>
+                      </persName>
+                    </person>
+                    <person xml:id="何東山">
+                      <persName role="party" ref="#何東山"> 何東山 </persName>
+                      <note>Biographical information</note>
+                    </person>
+                  </listPerson>
+                </egXML>
+              </div>
+              <div>
+                <head><gi>settingDesc</gi></head>
+                <p>The <gi>settingDesc</gi> element contains the list of <gi>placeName</gi> present
+                  in the code. Each <gi>place</gi> is attributed <ref
+                    target="ODD_COREL.html#TEI.place">a mandatory <att>xml:id</att></ref>. Notes
+                  about the place can be included if necessary.</p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <listPlace>
+                    <place xml:id="寧古塔">
+                      <placeName type="city" ref="#寧古塔"> 寧古塔 </placeName>
+                      <note>Information about the place</note>
+                    </place>
+                  </listPlace>
+                </egXML>
+              </div>
+            </div>
+            <div>
+              <head><gi>encodingDesc</gi></head>
+              <p>The <gi>encodingDesc</gi> element provides a description of the encoding
+                project.</p>
+            </div>
+          </div>
+          <div>
+            <head><gi>text</gi></head>
+            <p>The <gi>text</gi> element contains : <specList>
+                <specDesc key="front"/>
+                <specDesc key="body"/>
+              </specList></p>
+            <div>
+              <head><gi>front</gi></head>
+              <p>The <gi>front</gi> element only contains introductory charts for the legal code of
+                1740. There are no other introductory elements in the other documents that we wanted
+                to keep. These synoptic charts are interesting to keep in order to hava a global
+                view of the different themes present in the codes. </p>
+            </div>
+            <div>
+              <head><gi>body</gi></head>
+              <p>There are always seven chapters in legal codes, so the <gi>body</gi> element <ref
+                  target="ODD_COREL.html#TEI.body">only contains seven <gi>div</gi> element.</ref>
+              </p>
+              <div>
+                <head>Chapters (bu)</head>
+                <p>The <gi>body</gi> element must only contain nested <gi>div</gi>.The divisions
+                  directly contained in the <gi>body</gi> have a mandatory <att>type</att> attribute
+                  and its value is always <val>chapter</val>. <ref target="ODD_COREL.html#TEI.div"
+                    >The <att>n</att> attribute is also mandatory</ref> and numbers the seven
+                  chapters. <ref target="ODD_COREL.html#TEI.div">Chapters always start by a
+                    title.</ref> Chapters, as well as sections, statutes and substatutes, <ref
+                    target="ODD_COREL.html#TEI.pb">should contain a <gi>pb</gi> element </ref> and a
+                    <att>facs</att> attribute to link images to our encoding.</p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <div type="chapter" n="1">
+                    <head>名例律 Mingli lü</head>
+                  </div>
+                </egXML>
+                
+            </div>
+              <div>
+                <head>Sections (men)</head>
+                <p>Chapters must also contain nested <gi>div</gi>. <ref
+                  target="ODD_COREL.html#TEI.div">The <gi>div</gi> elements </ref> contained in
+                  a chapter are necessarily sections, so they have a mandatory <att>type</att>
+                  attribute and its value is always <val>section</val>. Sections are structured
+                  just like chapters : they are <ref target="ODD_COREL.html#TEI.div"
+                    >numbered</ref> and have a <ref target="ODD_COREL.html#TEI.head">title</ref>,
+                  as well as a <ref target="ODD_COREL.html#TEI.pb">
+                    <gi>pb</gi> element with a <att>facs</att> attribute</ref>.</p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <div type="section" n="1">
+                    <head>Mingli lü shang 名例律上名者，五刑之罪名。例者，五刑之體例也。</head>
+                  </div>
+                </egXML>
+                
+              </div>
+              <div>
+                <head>Statutes (lü)</head>
+                <p>Statutes are contained by sections. They are also marked by the <gi>div</gi>
+                  element, <ref target="ODD_COREL.html#TEI.div">with a mandatory <att>type</att>
+                    attribute.</ref> Its value is always <val>statute</val>. Statutes are also
+                  <ref target="ODD_COREL.html#TEI.div">numbered</ref> but starting from 0.
+                  <ref target="ODD_COREL.html#TEI.head">They start by a <gi>head</gi>
+                    element</ref>, followed by one or several paragraphs. They have a mandatory
+                  <ref target="ODD_COREL.html#TEI.div"><att>xml:id</att></ref>
+                </p>
+                <p> To recreate the legislation of imperial China, we need information on the
+                  year the law was applied and the year it ended. We chose to extend the TEI in
+                  order to add the following attributes : <ref target="ODD_COREL.html#TEI.div"
+                    ><att>notBefore</att>
+                  </ref> and <ref target="ODD_COREL.html#TEI.div"><att>notAfter</att>
+                  </ref> on statutes and substatutes. </p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <div type="statute" n="254" xml:id="DQLL_254" notBefore="1725" notAfter="1870"
+                    facs="img">
+                    <head>Moufan dani 謀反大逆</head>
+                    <p>凡謀反
+                      <note type="official">不利於國，謂謀危社稷</note> 及大逆
+                      <note type="official">不利於君，謂謀毀宗廟、山陵及宮闕</note>， 但共謀者，不分首從
+                      <note type="official">已未行</note>，皆凌遲處死。
+                      <note type="official">正犯之</note> 祖父、父、子孫、兄弟及同居之人 
+                      <note type="official">如本族無服親屬及外祖父、妻父、女壻之類</note>，不分異姓及
+                      <note type="official">正犯之期親</note> 伯叔父、兄弟之子，不限
+                      <note type="official">已未析居</note> 籍之同異，
+                      <note type="official">男</note> 年十六以上，不論篤疾、廢疾，皆斬。其 
+                      <note type="official">男</note> 十五以下，及
+                      <note type="official">正犯之</note> 母、女、妻妾、姊妹、若子之妻妾，給付功臣之家為奴。
+                      <note type="official">正犯</note> 財産入官。若女
+                      <note type="official">兼姊妹</note>  許嫁已定，歸其夫。
+                      <note type="official">正犯</note> 子孫過房與人，及
+                      <note type="official">正犯之</note> 聘妻未成者，俱不追坐。
+                      <note type="official">上止坐正犯兄弟之子，不及其孫。餘律文不載， 并不得株連。</note> 知情故縱隱藏者，斬。有能捕獲
+                      <note type="official">正犯</note> 者，民授以民官，軍授以軍職 
+                      <note type="official">量功授職</note>, 仍將犯人財産全給充賞。知而首告，官為捕獲者，止給財産。
+                      <note type="official">雖無故縱，但</note> 不首者，杖一百、流三千里。
+                      <note type="official">未行，而親屬告捕到官，正犯與緣坐人俱同自首，免。已行，惟正犯不免，餘免。非親屬首捕，雖未行， 仍依律坐。</note>
+                    </p>
+                  </div>
+                </egXML>
+                <p>Statutes should also have the <ref target="ODD_COREL.html#TEI.pb">
+                  <gi>pb</gi> element with a <att>facs</att> attribute.</ref></p>
+                <p>Statutes and substatutes can also have additional commentaries. These are
+                  placed on the same level as the substatutes, in a <gi>note</gi> element. They
+                  have a <ref target="ODD_COREL.html#TEI.note">mandatory <att>type</att>
+                    attribute</ref> and its values can be : <!-- insérer
+                      les types de commentaires--></p>
+                
+              </div>
+              <div>
+                <head>Substatutes (tiaoli)</head>
+                <p>Substatutes are structured like statutes. They are represented by the
+                  <gi>div</gi> element and have a <att>type</att> attribute, with the
+                  <val>substatute</val> value. Each statute contains one or several
+                  substatutes which are <ref target="ODD_COREL.html#TEI.div">numbered</ref>.
+                  Just like statutes, they have <ref target="#TEI.div">mandatory
+                    <att>notBefore</att></ref>, <ref target="ODD_COREL.html#TEI.div"
+                      ><att>notAfter</att> and <ref target="ODD_COREL.html#TEI.div"
+                        ><att>xml:id</att></ref> attributes </ref>. They should also contain
+                  the <ref target="ODD_COREL.html#TEI.pb"><gi>pb</gi> element </ref> with a
+                  <att>facs</att> attribute.</p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <div type="substatute" n="1" xml:id="DQLL_254_1" notBefore="1833"
+                    notAfter="1870">
+                    <p>一、反逆案内律應問擬凌遲之犯，其子孫訊明，實係不知謀逆情事者，無論已未成丁，均解交内務府閹割，
+                      發往新疆等處，給官兵為奴。如年在十歲以下者，牢固監禁，俟年届十一歲時，再行解交内務府，照例辦理。
+                      内務府大臣遇有解到閹割人犯，即遴派司員認眞看驗，並出具無弊切結，送交刑部，再行覆驗。如有情弊，即行奏參，
+                      務須查驗明確，再交兵部，發往新疆，給官兵為奴。至其餘律應緣坐男犯，並非逆犯子孫，年在十六歲以上者，發往新疆等處，
+                      給官兵為奴。如年在十五歲以下者，牢固監禁，俟成丁時再行發遣。緣坐婦女，發各省駐防，給官員兵丁為奴。其知情不首干連人犯，仍依律擬流。</p>
+                  </div>
+                </egXML>
+                
+              </div>
+              <div>
+                <head>Paragraphs</head>
+                <p>Paragraphs contain the following elements : <specList>
+                  <specDesc key="note"/>
+                  <specDesc key="persName"/>
+                  <specDesc key="placeName"/>
+                  <specDesc key="bibl"/>
+                </specList></p>
+                <div>
+                  <head>Commentaries</head>
+                  <p>Commentaries are contained inside the <gi>note</gi> element. The
+                    official commentaries, included into the legal code, are contained
+                    inside paragraphs. <ref target="ODD_COREL.html#TEI.note">They have a
+                      mandatory <att>type</att> attribute</ref> and its value is
+                    <val>official</val>.</p>
+                  <p>There are other types of commentaries. These are placed after the
+                    statute or the substatute. They have a mandatory <att>type</att>
+                    attribute to distinguish them from the official commentaries. Some
+                    commentaries contain additionnal metadata about the origin of a law.
+                    They are marked with the <val>metadata</val> type.
+                    <!-- Lister les valeurs d'attribut possibles pour les commentaires -->
+                  </p>
+                </div>
+                <div>
+                  <head><gi>persName</gi></head>
+                  <p>The element <gi>persName</gi>
+                    <ref target="ODD_COREL.html#TEI.persName">has a <att>ref</att> attribute
+                    </ref> which calls the <att>xml:id</att> related to the person in the
+                    <gi>particDesc</gi>. <ref target="ODD_COREL.html#TEI.persName">The
+                      <att>role</att> attribute is mandatory</ref> and its value can be :
+                    <val>governor</val>, <val>party</val>
+                    <!-- faire la liste des rôles --></p>
+                  <p>We chose not to distinguish forenames and surnames in our encoding,
+                    because it is not relevant for chinese entities. The <gi>persName</gi>
+                    element only distinguishes names and role names.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <persName role="governor" ref="#覺羅伍拉納">
+                      <roleName>福建巡撫</roleName>
+                      <name>覺羅伍拉納</name>
+                    </persName>
+                  </egXML>
+                </div>
+                <div>
+                  <head><gi>placeName</gi></head>
+                  <p>The element <gi>placeName</gi> is similar to the <gi>persName</gi>
+                    element in its structure. It has a <att>type</att> attribute to identify
+                    whether the place is where the law is applied, or where the law comes
+                    from.. <ref target="ODD_COREL.html#TEI.placeName">The attribute is
+                      mandatory</ref> and its value can be : <val>origin</val> or
+                    <val>application</val> It also has <ref
+                      target="ODD_COREL.html#TEI.placeName">a <att>ref</att> attribute</ref>
+                    to identify which place it is thanks to the <att>xml:id</att> in the
+                    <gi>settingDesc</gi>.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <placeName type="application" ref="#寧古塔"> 寧古塔 </placeName>
+                  </egXML>
+                </div>
+                <div>
+                  <head><gi>bibl</gi></head>
+                  <p>The <gi>bibl</gi> element is used for bibliographic references present
+                    inside the legal code.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <bibl> 蒙古例 </bibl>
+                  </egXML>
+                </div>
+              </div>
+              <div>
+                <head>Lists</head>
+                <p>In the Huidian Shili, some lists appear after the substatutes. These
+                  sections give details about judicial procedures and criminal matters. Each
+                  <gi>list</gi> element is composed of several <gi>item</gi> elements. These
+                  items must contain two elements : a <gi>date</gi> and one or several
+                  <gi>p</gi>.</p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples"><div>
+                  <head>linian shili 歷年事例</head>
+                  <head>xingzhi 刑制</head>
+                  <list>
+                    <item>
+                      <date when="1644">1644</date>
+                      <p>諭。各衙門應責人犯。悉遵用鞭責。不許用杖。又奏准。五刑中死罪居二。曰斬曰絞。明律分別差等。絞斬互用。我朝法制。罪應死者止用斬刑。嗣後麗重典者仍分斬絞。按律引擬。至以板易鞭。尤當酌得其中。定以三鞭准一板。
+                      </p>
+                    </item>
+                    <item>
+                      <date when="1646">1646</date>
+                      <p>除割腳筋法。又舊例犯重辟減等者。鞭一百。貫耳鼻。奉旨。耳鼻在人身最為顯著。此刑永革除之。</p>
+                    </item>
+                  </list>
+                </div>
+                </egXML>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <head>Encoding rules</head>
+        <schemaSpec ident="ODD_COREL" start="TEI ">
+
+          <!-- Les modules obligatoires pour tous les documents TEI -->
+          <moduleRef key="tei"/>
+          <moduleRef key="core"
+            include="p name date list item head note lb respStmt resp title pubPlace bibl pb"/>
+          <moduleRef key="header"
+            include="teiHeader fileDesc titleStmt editionStmt edition publicationStmt authority availability licence sourceDesc encodingDesc projectDesc profileDesc"/>
+          <moduleRef key="textstructure" include="TEI text body div front"/>
+
+          <!-- Modules nécessaires aux besoins spécifiques du projet -->
+          <moduleRef key="namesdates"
+            include="persName surname forename roleName placeName listPerson listPlace person place"/>
+          <moduleRef key="figures" include="table row cell"/>
+          <moduleRef key="corpus" include="particDesc settingDesc"/>
+
+          <!-- Liste des éléments modifiés -->
+
+          <elementSpec ident="body" mode="change">
+
+            <!-- Il doit y avoit 7 chapitres -->
+            <constraintSpec scheme="schematron" ident="sequence" xml:id="rule05">
+              <constraint>
+                <s:rule context="tei:body">
+                  <s:assert test="count(tei:div[@type='chapter'])=7"> Il doit y avoir 7 chapitres
+                    dans le document. </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="pb" mode="change">
+            <!-- L'attribut facs est obligatoire sur les pb -->
+            <constraintSpec scheme="schematron" ident="facs" xml:id="rule08">
+              <constraint>
+                <s:rule context="tei:body//tei:pb">
+                  <s:assert test="@facs" role="WARN"> L'attribut facs est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+
+            <attList>
+              <attDef ident="facs" mode="change" usage="rec"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="div" mode="change">
+            <constraintSpec scheme="schematron" ident="pb">
+              <constraint>
+                <s:rule context="tei:div[@type='chapter']">
+                  <s:assert test="tei:pb" role="WARN"> L'élément div doit contenir un élément pb
+                  </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+
+            <!-- La div 'chapter' doit contenir une div 'section' -->
+            <constraintSpec scheme="schematron" ident="sequence" xml:id="rule09">
+              <constraint>
+                <s:rule context="tei:div[@type='chapter']">
+                  <s:assert test="tei:div[@type='section']"> La div 'chapter' doit contenir une div
+                    'section' </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+            <!-- Les chapitres doivent contenir un titre -->
+            <constraintSpec scheme="schematron" ident="title" xml:id="rule07">
+              <constraint>
+                <s:rule context="tei:div[@type='chapter']">
+                  <s:assert test="tei:head"> La div 'chapter' doit contenir un titre </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+
+            <!-- La div 'section' doit contenir une div 'statute' -->
+            <constraintSpec scheme="schematron" ident="sequence" xml:id="rule13">
+              <constraint>
+                <s:rule context="tei:div[@type='section']">
+                  <s:assert test="tei:div[@type='statute']"> La div 'section' doit contenir une div
+                    'statute' </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+            <!-- Les sections doivent contenir un titre -->
+            <constraintSpec scheme="schematron" ident="title" xml:id="rule11">
+              <constraint>
+                <s:rule context="tei:div[@type='section']">
+                  <s:assert test="tei:head"> La div 'section' doit contenir un titre </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+
+            <!-- Règle : la présence des attributs notBefore et notAfter est obligatoire sur les statutes -->
+            <constraintSpec scheme="schematron" ident="notBeforeStatute" xml:id="rule15">
+              <constraint>
+                <s:rule context="tei:div[@type='statute']">
+                  <s:assert test="@notBefore"> L'attribut notBefore est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec scheme="schematron" ident="notAfterStatute" xml:id="rule16">
+              <constraint>
+                <s:rule context="tei:div[@type='statute']">
+                  <s:assert test="@notAfter"> L'attribut notAfter est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+
+            <!-- Règle : la présences des attributs notBefore et notAfter est obligatoire sur les substatutes -->
+            <constraintSpec scheme="schematron" ident="notBeforeSubstatute" xml:id="rule20">
+              <constraint>
+                <s:rule context="tei:div[@type='substatute']">
+                  <s:assert test="@notBefore"> L'attribut notBefore est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec scheme="schematron" ident="notAfterSubstatute" xml:id="rule21">
+              <constraint>
+                <s:rule context="tei:div[@type='substatute']">
+                  <s:assert test="@notAfter"> L'attribut notAfter est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+
+            <!-- Règle : l'attribut xml:id est obligatoire sur les statutes -->
+            <constraintSpec scheme="schematron" ident="idStatute" xml:id="rule28">
+              <constraint>
+                <s:rule context="tei:div[@type='statute']">
+                  <s:assert test="@xml:id"> L'attribut xml:id est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+
+            <!-- Les statutes doivent contenir un titre -->
+            <constraintSpec scheme="schematron" ident="title" xml:id="rule14">
+              <constraint>
+                <s:rule context="tei:div[@type='statute']">
+                  <s:assert test="tei:head"> La div 'statute' doit contenir un titre </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+
+            <!-- Règle : l'attribut xml:id est obligatoire sur les substatutes -->
+            <constraintSpec scheme="schematron" ident="idSubstatute" xml:id="rule29">
+              <constraint>
+                <s:rule context="tei:div[@type='substatute']">
+                  <s:assert test="@xml:id"> L'attribut xml:id est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+
+            <!-- L'attribut n est obligatoire sur les div chapter -->
+            <constraintSpec scheme="schematron" ident="nchapter" xml:id="rule06">
+              <constraint>
+                <s:rule context="tei:div[@type='chapter']">
+                  <s:assert test="@n"> L'attribut n est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+
+            <!-- L'attribut n est obligatoire sur les div section -->
+            <constraintSpec scheme="schematron" ident="nsection" xml:id="rule10">
+              <constraint>
+                <s:rule context="tei:div[@type='section']">
+                  <s:assert test="@n"> L'attribut n est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+
+            <!-- L'attribut n est obligatoire sur les div statute -->
+            <constraintSpec scheme="schematron" ident="nstatute" xml:id="rule18">
+              <constraint>
+                <s:rule context="tei:div[@type='statute']">
+                  <s:assert test="@n"> L'attribut n est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+
+            <!-- L'attribut n est obligatoire sur les div substatute -->
+            <constraintSpec scheme="schematron" ident="nsubstatute" xml:id="rule30">
+              <constraint>
+                <s:rule context="tei:div[@type='substatute']">
+                  <s:assert test="@n"> L'attribut n est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+
+            <attList>
+              <attDef ident="n" mode="change"/>
+              <attDef ident="type" mode="change">
+                <valList mode="add" type="closed">
+                  <valItem ident="chapter"/>
+                  <valItem ident="chart"/>
+                  <valItem ident="section"/>
+                  <valItem ident="statute"/>
+                  <valItem ident="substatute"/>
+                  <valItem ident="table"/>
+                </valList>
+              </attDef>
+              <!-- Ajout des attributs sur les div -->
+              <attDef ident="notBefore" mode="add"/>
+              <attDef ident="notAfter" mode="add"/>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="persName" mode="change">
+
+            <!-- Règle pour que l'attribut ref soit obligatoire sur les persName du texte et les persName du particDesc -->
+            <constraintSpec scheme="schematron" ident="ref" xml:id="rule23">
+              <constraint>
+                <s:rule context="//tei:text//tei:persName">
+                  <s:assert test="@ref" role="WARN"> L'attribut ref est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec scheme="schematron" ident="ref" xml:id="rule03">
+              <constraint>
+                <s:rule context="//tei:particDesc//tei:persName">
+                  <s:assert test="@ref" role="WARN"> L'attribut ref est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+            <!-- Règle pour que l'attribut role soit obligatoire sur les persName-->
+            <constraintSpec scheme="schematron" ident="role" xml:id="rule02">
+              <constraint>
+                <s:rule context="//tei:particDesc//tei:persName">
+                  <s:assert test="@role" role="WARN"> L'attribut role est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec scheme="schematron" ident="role" xml:id="rule24">
+              <constraint>
+                <s:rule context="//tei:text//tei:persName">
+                  <s:assert test="@role" role="WARN"> L'attribut role est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+            <attList>
+              <attDef ident="ref" mode="change"/>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="when" mode="delete"/>
+              <attDef ident="role" mode="change">
+                <!-- Liste ouverte des valeurs du type de persName, à changer plus tard si la liste est définitive -->
+                <valList mode="add" type="open">
+                  <valItem ident="governor"/>
+                  <valItem ident="party"/>
+                </valList>
+              </attDef>
+              <attDef ident="type" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <!-- Règle : attribut ref sur les placeName du text obligatoire -->
+          <elementSpec ident="placeName" mode="change">
+            <constraintSpec scheme="schematron" ident="refPlace" xml:id="rule26">
+              <constraint>
+                <s:rule context="//tei:text//tei:placeName">
+                  <s:assert test="@ref" role="WARN"> L'attribut ref est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+
+            <!-- L'attribut type est obligatoire sur les noms de lieux du texte -->
+            <constraintSpec scheme="schematron" ident="typePlace" xml:id="rule27">
+              <constraint>
+                <s:rule context="//tei:text//tei:placeName">
+                  <s:assert test="@type" role="WARN"> L'attribut type est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+            <attList>
+              <attDef ident="when" mode="delete"/>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="role" mode="delete"/>
+              <attDef ident="type" mode="change">
+                <valList mode="add" type="closed" xml:id="rule25">
+                  <!-- Liste close de valeurs : lieu d'application ou d'origine de la loi -->
+                  <valItem ident="origin"/>
+                  <valItem ident="application"/>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="note" mode="change">
+            <!-- L'attribut type est obligatoire sur les notes -->
+            <constraintSpec scheme="schematron" ident="typenote" xml:id="rule19">
+              <constraint>
+                <s:rule context="tei:text//tei:note">
+                  <s:assert test="@type"> L'attribut type est obligatoire </s:assert>
+                </s:rule>
+              </constraint>
+            </constraintSpec>
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="target" mode="delete"/>
+              <attDef ident="type" mode="change">
+                <valList mode="add" type="closed">
+                  <!-- Faire une liste des valeurs autorisées lorsque je les aurais -->
+                  <valItem ident="ABC"/>
+                  <valItem ident="XYZ"/>
+                  <valItem ident="official"/>
+                  <valItem ident="metadata"/>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="person" mode="change" xml:id="rule01">
+            <!-- Règle : xml:id obligatoire -->
+            <attList>
+              <attDef ident="xml:id" mode="change" usage="req"/>
+              <attDef ident="role" mode="delete"/>
+              <attDef ident="sex" mode="delete"/>
+              <attDef ident="gender" mode="delete"/>
+              <attDef ident="age" mode="delete"/>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <!-- xml:id obligatoire -->
+          <elementSpec ident="place" mode="change" xml:id="rule04">
+            <attList>
+              <attDef ident="xml:id" mode="change" usage="req"/>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="type" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="surname" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="role" mode="delete"/>
+              <attDef ident="ref" mode="delete"/>
+              <attDef ident="type" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="forename" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="role" mode="delete"/>
+              <attDef ident="ref" mode="delete"/>
+              <attDef ident="type" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="roleName" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="role" mode="delete"/>
+              <attDef ident="ref" mode="delete"/>
+              <attDef ident="type" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="listPerson" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="type" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="listPlace" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="type" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="p" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="table" mode="change">
+            <attList>
+              <attDef ident="rows" mode="delete"/>
+              <attDef ident="cols" mode="delete"/>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="type" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="name" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="role" mode="delete"/>
+              <attDef ident="ref" mode="delete"/>
+              <attDef ident="when" mode="delete"/>
+              <attDef ident="type" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="date" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="ref" mode="delete"/>
+              <attDef ident="type" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="list" mode="change">
+            <attList>
+              <attDef ident="type" mode="delete"/>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="type" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="item" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+          <elementSpec ident="head" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="type" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="lb" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="type" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="respStmt" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="ref" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="resp" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="ref" mode="delete"/>
+              <attDef ident="when" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="title" mode="change">
+            <attList>
+              <attDef ident="level" mode="delete"/>
+              <attDef ident="type" mode="delete"/>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="type" mode="delete"/>
+              <attDef ident="ref" mode="delete"/>
+              <attDef ident="when" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="pubPlace" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="role" mode="delete"/>
+              <attDef ident="ref" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="bibl" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="type" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="row" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="rows" mode="delete"/>
+              <attDef ident="cols" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="cell" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="TEI" mode="change">
+            <attList>
+              <attDef ident="version" mode="delete"/>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="type" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="text" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="type" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="front" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="teiHeader" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="fileDesc" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="titleStmt" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="editionStmt" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="edition" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="publicationStmt" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="authority" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="ref" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="availability" mode="change">
+            <attList>
+              <attDef ident="status" mode="delete"/>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="licence" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+              <attDef ident="when" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="sourceDesc" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="encodingDesc" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="projectDesc" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="profileDesc" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="particDesc" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="settingDesc" mode="change">
+            <attList>
+              <attDef ident="facs" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <!-- Liste des classes modifiées -->
+          <classSpec ident="att.textCritical" type="atts" mode="change">
+            <attList>
+              <attDef ident="type" mode="delete"/>
+              <attDef ident="cause" mode="delete"/>
+              <attDef ident="varSeq" mode="delete"/>
+              <attDef ident="require" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.lexicographic" type="atts" mode="change">
+            <attList>
+              <attDef ident="expand" mode="delete"/>
+              <attDef ident="split" mode="delete"/>
+              <attDef ident="value" mode="delete"/>
+              <attDef ident="location" mode="delete"/>
+              <attDef ident="mergedIn" mode="delete"/>
+              <attDef ident="opt" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.combinable" type="atts" mode="change">
+            <attList>
+              <attDef ident="mode" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.identified" type="atts" mode="change">
+            <attList>
+              <attDef ident="ident" mode="delete"/>
+              <attDef ident="predeclare" mode="delete"/>
+              <attDef ident="module" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.ascribed.directed" type="atts" mode="change">
+            <attList>
+              <attDef ident="toWhom" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.canonical" type="atts" mode="change">
+            <attList>
+              <attDef ident="key" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.dimensions" type="atts" mode="change">
+            <attList>
+              <attDef ident="unit" mode="delete"/>
+              <attDef ident="quantity" mode="delete"/>
+              <attDef ident="extent" mode="delete"/>
+              <attDef ident="precision" mode="delete"/>
+              <attDef ident="scope" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.damaged" type="atts" mode="change">
+            <attList>
+              <attDef ident="agent" mode="delete"/>
+              <attDef ident="degree" mode="delete"/>
+              <attDef ident="group" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.datable.w3c" type="atts" mode="change">
+            <attList>
+              <attDef ident="notBefore" mode="delete"/>
+              <attDef ident="notAfter" mode="delete"/>
+              <attDef ident="from" mode="delete"/>
+              <attDef ident="to" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.datable" type="atts" mode="change">
+            <attList>
+              <attDef ident="calendar" mode="delete"/>
+              <attDef ident="period" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.divLike" type="atts" mode="change">
+            <attList>
+              <attDef ident="org" mode="delete"/>
+              <attDef ident="sample" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.media" type="atts" mode="change">
+            <attList>
+              <attDef ident="width" mode="delete"/>
+              <attDef ident="height" mode="delete"/>
+              <attDef ident="scale" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.naming" type="atts" mode="change">
+            <attList>
+              <attDef ident="nymRef" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.typed" type="atts" mode="change">
+            <attList>
+              <attDef ident="subtype" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.pointing" type="atts" mode="change">
+            <attList>
+              <attDef ident="targetLang" mode="delete"/>
+              <attDef ident="evaluate" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.pointing.group" type="atts" mode="change">
+            <attList>
+              <attDef ident="domains" mode="delete"/>
+              <attDef ident="targFunc" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.segLike" type="atts" mode="change">
+            <attList>
+              <attDef ident="function" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.timed" type="atts" mode="change">
+            <attList>
+              <attDef ident="start" mode="delete"/>
+              <attDef ident="end" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.transcriptional" type="atts" mode="change">
+            <attList>
+              <attDef ident="status" mode="delete"/>
+              <attDef ident="cause" mode="delete"/>
+              <attDef ident="seq" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.personal" type="atts" mode="change">
+            <attList>
+              <attDef ident="full" mode="delete"/>
+              <attDef ident="sort" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.lexicographic" type="atts" mode="change">
+            <attList>
+              <attDef ident="expand" mode="delete"/>
+              <attDef ident="split" mode="delete"/>
+              <attDef ident="value" mode="delete"/>
+              <attDef ident="location" mode="delete"/>
+              <attDef ident="mergedIn" mode="delete"/>
+              <attDef ident="opt" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.tableDecoration" type="atts" mode="change">
+            <attList>
+              <attDef ident="role" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classSpec ident="att.linguistic" type="atts" mode="change">
+            <attList>
+              <attDef ident="lemma" mode="delete"/>
+              <attDef ident="lemmaRef" mode="delete"/>
+              <attDef ident="pos" mode="delete"/>
+              <attDef ident="msd" mode="delete"/>
+              <attDef ident="join" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <classRef key="att.textCritical"/>
+          <classRef key="model.rdgLike"/>
+          <classRef key="model.rdgPart"/>
+          <classRef key="model.physDescPart"/>
+          <classRef key="model.persNamePart"/>
+          <classRef key="att.lexicographic"/>
+          <classRef key="model.entryLike"/>
+          <classRef key="model.formPart"/>
+          <classRef key="model.gramPart"/>
+          <classRef key="model.lexicalRefinement"/>
+          <classRef key="model.morphLike"/>
+          <classRef key="model.ptrLike.form"/>
+          <classRef key="att.combinable"/>
+          <classRef key="att.identified"/>
+          <classRef key="model.contentPart"/>
+          <classRef key="att.tableDecoration"/>
+          <classRef key="att.global.facs"/>
+          <classRef key="att.linguistic"/>
+
+        </schemaSpec>
+      </div>
+    </body>
+  </text>
+</TEI>
