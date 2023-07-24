@@ -72,6 +72,9 @@
 \newacronym{PDF}{\textsc{PDF}}{\emph{Portable Document Format}}
 \newacronym{TSV}{\textsc{TSV}}{\emph{Tab Separated Values}}
 \newacronym{OAI-PMH}{\textsc{OAI-PMH}}{\emph{Open Archives Initiative Protocole for Metadata Harvesting}}
+\newacronym{XSLT}{\textsc{XSLT}}{Extensible Stylesheet Language Transformation}
+\newacronym{JS}{\textsc{JS}}{\emph{JavaScript}}
+\newacronym{W3C}{\textsc{W3C}}{\emph{World Wide Web Consortium}}
 
 % COMMANDS
 \newcommand{\enc}{École nationale des chartes\xspace}
@@ -120,6 +123,10 @@
 \newcommand{\pdf}{\gls{PDF}\xspace}
 \newcommand{\tsv}{\gls{TSV}\xspace}
 \newcommand{\oai}{\gls{OAI-PMH}\xspace}
+\newcommand{\XSLT}{\gls{XSLT}\xspace}
+\newcommand{\JS}{\gls{JS}\xspace}
+\newcommand{\w}{\gls{W3C}\xspace}
+
 % Pour retirer le titre courant d'une page vide avant un chapitre
 \newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
 % Pour des sections non numérotées dans la table des matière
@@ -145,6 +152,7 @@
     \addcontentsline{toc}{chapter}{Remerciements}
     
     \chapterNo{Introduction}
+    \include{templates/introduction}
     \addcontentsline{toc}{chapter}{Introduction}
 
     \thispagestyle{empty}
