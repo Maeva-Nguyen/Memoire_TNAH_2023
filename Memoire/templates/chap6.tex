@@ -135,28 +135,11 @@ L'établissement d'un échantillon des données permet ainsi de fournir un modè
 
 \subsection{Limites de cet aperçu idéalisé des données}
 
-§ Paragraphe 1
+L'échantillon de données offre un modèle de données à suivre afin de réaliser le projet. Toutefois, il représente un aperçu idéalisé des données telles que l'équipe du projet les envisage à la fin du financement, afin d'offrir aux chercheurs une édition scientifique numérique la plus complète possible. Les contraintes de temps et de financement peuvent influer sur ce modèle de données et son niveau de complétude. L'échantillon permet alors de mettre en lumière les informations manquantes dans l'encodage à un instant T, notamment les informations qui seront essentiels pour mener à bien le projet (les bornes chronologiques et les identifiants \XML notamment). Cet aperçu idéalisé des données peut être réalisé dans le périmètre du projet en automatisant l'encodage via des scripts : les données à ajouter depuis les fichiers \JSON pourront être ajoutées automatiquement. Cependant, le balisage des entités nommées et l'ajout des commentaires sont des données disponibles en texte brut sans balisage, ce qui nécessite un travail supplémentaire de la part de l'équipe du projet. L'encodage des commentaires est actuellement en cours de traitement, mais dans le modèle de données du projet \LSC. Une étape supplémentaire de transformation devra donc être prise en charge par le projet. Cet enrichissement des données \LSC est hors périmètre du projet \COREL. Cependant, les chercheurs continuent d'alimenter les projets antérieurs, ce qui ajoute une étape supplémentaire dans le traitement des données. Les commentaires encodés en \XML devront être transformés en \TEI via \XSLT ou via un script. 
 
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
+De plus, le travail sur les entités nommées est également en cours de traitement. Les rôles des fonctionnaires commencent à être identifiés dans les annotations, mais ces informations, repérées et ajoutées une à une par les chercheurs à la lecture des textes de loi, demande un travail de recherche long et exhaustif. Lors du stage, il a été envisagé d'utiliser un outil d'encodage automatique en \TEI, MARKUS. MARKUS est un outil qui permet de reconnaître les entités nommées (noms de personnes, de lieux et dates) pour les textes chinois et coréens. C'est un outil open source, accessible en ligne qui prend en entrée du texte brut et place des balises \TEI uniquement sur les entités nommées. Un test avec l'un des documents du corpus a été réalisé afin d'envisager un traitement automatique de l'encodage. MARKUS, cependant, est une version bêta en cours de production. Bien qu'il balise les entités nommées, les documents \TEI obtenus en sortie ne sont pas valides car seules les entités nommées sont balisées, sans racine \texttt{<TEI>} et autres balises obligatoires. Puisque les sources numériques devaient être transformées en \TEI afin de proposer une édition en ligne, l'équipe du projet a donc envisagé d'ajouter aux documents \TEI finaux les informations supplémentaires obtenues par MARKUS via un script. Cependant, à l'analyse des résultats fournis, la reconnaissance d'entités nommées contenait trop peu d'informations exactes pour justifier cette étape supplémentaire dans le traitement des données : utiliser les balises de MARKUS demande plusieurs étapes supplémentaires dans la préparation des données : une phase de relecture des résultats, puis l'ajout des entités nommées dans le corpus \TEI et enfin la vérification du résultat final obtenu. Le travail de correction a été estimé trop important, car beaucoup de bruit était généré par le balisage automatique. Par exemple, certains noms étrangers sont retranscris en chinois par des chiffres. Une confusion entre des chiffres et des noms de personnes pouvait donc être constatées dans l'encodage automatique. Cette solution n'a donc pas été adoptée car l'échéance du projet ne permet pas un laps de temps suffisant pour utiliser au mieux cet outil. 
 
-§ Paragraphe 2
-
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
-
-§ Paragraphe 3
-
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
-
-
+L'échantillon de données et ce travail de réflexion sur la manière d'enrichir les données du projet a été le moyen de déterminer quelles données sont primodiales afin de réaliser le projet et lesquelles sont un enrichissement pertinent à proposer aux chercheurs sans pour autant être des données décisives pour la bonne réalisation des livrables.
  \section{Un schéma d’encodage}
     \subsection{La documentation de l’encodage}
 
