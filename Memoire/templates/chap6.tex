@@ -134,56 +134,150 @@ Pour le balisage des noms de lieux, une structure similaire a été mise en plac
 L'établissement d'un échantillon des données permet ainsi de fournir un modèle d'encodage à suivre pour la suite du projet et donne un aperçu de l'état final du jeu de données \TEI. L'exercice a pu mettre en valeur les difficultés qui peuvent être rencontrées lors de l'encodage, notamment l'accessibilité des ressources ou le besoin d'étendre la \TEI, et ainsi de les anticiper et de commencer à les résoudre en amont afin de pouvoir enrichir le jeu de données dès le mois de septembre. Toutefois, il est également pertinent d'étudier les limites de cet aperçu idéalisé des données.
 
 \subsection{Limites de cet aperçu idéalisé des données}
-
 L'échantillon de données offre un modèle de données à suivre afin de réaliser le projet. Toutefois, il représente un aperçu idéalisé des données telles que l'équipe du projet les envisage à la fin du financement, afin d'offrir aux chercheurs une édition scientifique numérique la plus complète possible. Les contraintes de temps et de financement peuvent influer sur ce modèle de données et son niveau de complétude. L'échantillon permet alors de mettre en lumière les informations manquantes dans l'encodage à un instant T, notamment les informations qui seront essentiels pour mener à bien le projet (les bornes chronologiques et les identifiants \XML notamment). Cet aperçu idéalisé des données peut être réalisé dans le périmètre du projet en automatisant l'encodage via des scripts : les données à ajouter depuis les fichiers \JSON pourront être ajoutées automatiquement. Cependant, le balisage des entités nommées et l'ajout des commentaires sont des données disponibles en texte brut sans balisage, ce qui nécessite un travail supplémentaire de la part de l'équipe du projet. L'encodage des commentaires est actuellement en cours de traitement, mais dans le modèle de données du projet \LSC. Une étape supplémentaire de transformation devra donc être prise en charge par le projet. Cet enrichissement des données \LSC est hors périmètre du projet \COREL. Cependant, les chercheurs continuent d'alimenter les projets antérieurs, ce qui ajoute une étape supplémentaire dans le traitement des données. Les commentaires encodés en \XML devront être transformés en \TEI via \XSLT ou via un script. 
 
-De plus, le travail sur les entités nommées est également en cours de traitement. Les rôles des fonctionnaires commencent à être identifiés dans les annotations, mais ces informations, repérées et ajoutées une à une par les chercheurs à la lecture des textes de loi, demande un travail de recherche long et exhaustif. Lors du stage, il a été envisagé d'utiliser un outil d'encodage automatique en \TEI, MARKUS. MARKUS est un outil qui permet de reconnaître les entités nommées (noms de personnes, de lieux et dates) pour les textes chinois et coréens. C'est un outil open source, accessible en ligne qui prend en entrée du texte brut et place des balises \TEI uniquement sur les entités nommées. Un test avec l'un des documents du corpus a été réalisé afin d'envisager un traitement automatique de l'encodage. MARKUS, cependant, est une version bêta en cours de production. Bien qu'il balise les entités nommées, les documents \TEI obtenus en sortie ne sont pas valides car seules les entités nommées sont balisées, sans racine \texttt{<TEI>} et autres balises obligatoires. Puisque les sources numériques devaient être transformées en \TEI afin de proposer une édition en ligne, l'équipe du projet a donc envisagé d'ajouter aux documents \TEI finaux les informations supplémentaires obtenues par MARKUS via un script. Cependant, à l'analyse des résultats fournis, la reconnaissance d'entités nommées contenait trop peu d'informations exactes pour justifier cette étape supplémentaire dans le traitement des données : utiliser les balises de MARKUS demande plusieurs étapes supplémentaires dans la préparation des données : une phase de relecture des résultats, puis l'ajout des entités nommées dans le corpus \TEI et enfin la vérification du résultat final obtenu. Le travail de correction a été estimé trop important, car beaucoup de bruit était généré par le balisage automatique. Par exemple, certains noms étrangers sont retranscris en chinois par des chiffres. Une confusion entre des chiffres et des noms de personnes pouvait donc être constatées dans l'encodage automatique. Cette solution n'a donc pas été adoptée car l'échéance du projet ne permet pas un laps de temps suffisant pour utiliser au mieux cet outil. 
+De plus, le travail sur les entités nommées est également en cours de traitement. Les rôles des fonctionnaires commencent à être identifiés dans les annotations, mais ces informations, repérées et ajoutées une à une par les chercheurs à la lecture des textes de loi, demande un travail de recherche long et exhaustif. Lors du stage, il a été envisagé d'utiliser un outil d'encodage automatique en \TEI, MARKUS. MARKUS est un outil qui permet de reconnaître les entités nommées (noms de personnes, de lieux et dates notamment) pour les textes chinois et coréens. C'est un outil open source, accessible en ligne qui prend en entrée du texte brut et place des balises \TEI uniquement sur les entités nommées. Un test avec l'un des documents du corpus a été réalisé afin d'envisager un traitement automatique de l'encodage. MARKUS, cependant, est une version bêta en cours de production. Bien qu'il balise les entités nommées, les documents \TEI obtenus en sortie ne sont pas valides car seules les entités nommées sont balisées, sans racine \texttt{<TEI>} et autres balises obligatoires. Puisque les sources numériques devaient être transformées en \TEI afin de proposer une édition en ligne, l'équipe du projet a donc envisagé d'ajouter aux documents \TEI finaux les informations supplémentaires obtenues par MARKUS via un script. Cependant, à l'analyse des résultats fournis, la reconnaissance d'entités nommées contenait trop peu d'informations exactes pour justifier cette étape supplémentaire dans le traitement des données : utiliser les balises de MARKUS demande plusieurs étapes supplémentaires dans la préparation des données : une phase de relecture des résultats, puis l'ajout des entités nommées dans le corpus \TEI et enfin la vérification du résultat final obtenu. Le travail de correction a été estimé trop important, car beaucoup de bruit était généré par le balisage automatique. Par exemple, certains noms étrangers sont retranscris en chinois par des chiffres. Une confusion entre des chiffres et des noms de personnes pouvait donc être constatées dans l'encodage automatique. Un autre exemple de balisage par MARKUS montre un mésusage des attributs \TEI : 
 
-L'échantillon de données et ce travail de réflexion sur la manière d'enrichir les données du projet a été le moyen de déterminer quelles données sont primodiales afin de réaliser le projet et lesquelles sont un enrichissement pertinent à proposer aux chercheurs sans pour autant être des données décisives pour la bonne réalisation des livrables.
+\begin{minted}{xml}
+    <roleName n="officialTitle">法司</roleName>
+\end{minted}
+
+L'attribut \texttt{@n}, utilisé pour la numérotation, est souvent utilisée par MARKUS comme un attribut \texttt{@type}. Cette solution n'a donc pas été adoptée car l'échéance du projet ne permet pas un laps de temps suffisant pour utiliser au mieux cet outil. 
+
+L'échantillon de données et ce travail de réflexion sur la manière d'enrichir les données du projet a été le moyen de déterminer quelles données sont primordiales afin de réaliser le projet et lesquelles sont un enrichissement pertinent à proposer aux chercheurs sans pour autant être des données décisives pour la bonne réalisation des livrables.
+%peut être rajouter un exemple de code sorti par Markus
+
  \section{Un schéma d’encodage}
     \subsection{La documentation de l’encodage}
 
-§ Paragraphe 1
+En prenant appui sur le jeu de données \TEI de référence établi pendant le stage et sur l'échantillon des données, il a été possible de mettre en place une \ODD afin de documenter les sources du projet et de mettre en place un schéma d'encodage à suivre. 
 
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
+Les projets d'édition scientifique numérique s'accompagnent en effet d'une documentation en prose dans l'\ODD. Cette documentation ne remplace pas les \textit{guidelines} de la \TEI mais viennent les compléter afin d'expliciter les spécifités d'encodage du corpus, la structure des documents et les choix faits par l'équipe. Cela est utile à la fois à l'équipe, qui peut se référer à des documents de travail clairs et aux utilisateurs qui consulteront les données une fois publiées. 
 
-§ Paragraphe 2
+L'\ODD a été rédigée selon le modèle de données final que le projet souhaite obtenir. Certains éléments ne sont donc pas encore présent dans le jeu de données \TEI mais figurent dans l'échantillon à titre d'exemple. L'\ODD reste modifiable par l'équipe du projet si les choix d'encodage venaient à changer lors de la préparation des données tout en offrant un guide d'encodage précis à suivre agrémenté d'exemples tirés du corpus ou de l'échantillon : 
 
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
+\begin{minted}{xml}
+    <div>
+        <head>
+            <gi>particDesc</gi>
+        </head>
+        <p>
+            The <gi>particDesc</gi> element contains the list of 
+           <gi>persName</gi> present in the code. 
+           Each <gi>person</gi> is attributed 
+            <ref target="ODD_COREL.html#TEI.person">
+                a mandatory <att>xml:id</att>
+            </ref> 
+            and a 
+            <ref target="ODD_COREL.html#TEI.person">
+                mandatory <att>role</att>.
+            </ref> 
+            Inside the <gi>person</gi> element, 
+            the <gi>persName</gi> element must contain 
+            <ref target="ODD_COREL.html#TEI.persName">
+                the <att>ref</att>attribute.
+            </ref> 
+            Biographic notes about the person can be included if
+                  necessary.
+        </p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <listPerson>
+                <person xml:id="覺羅伍拉納">
+                    <persName role="governor" ref="#覺羅伍拉納">
+                        <roleName>福建巡撫</roleName>
+                        <name>覺羅伍拉納</name>
+                    </persName>
+                    <note>Biographical information</note>
+                </person>
+                <person xml:id="何東山">
+                    <persName role="party" ref="#何東山"> 何東山 </persName>
+                    <note>Biographical information</note>
+                </person>
+            </listPerson>
+        </egXML>
+    </div>
+\end{minted}
 
-§ Paragraphe 3
+Chaque élément de l'encodage et l'utilisation qui en est faite sont décrits, avec la liste des éléments enfants lorsque l'élément peut contenir d'autres éléments \TEI. Les règles de validation spécifiques au corpus (le nombre de fois que l'élément apparaît, les attributs et/ou éléments obligatoires...) sont également définies. Un exemple permet ensuite d'illustrer la définition des éléments. 
 
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
+L'\ODD rédigée a enfin été transformée via le scénario de transformation \textit{oddbyexample}. Ce schéma de transformation permet d'obtenir un fichier \HTML afin d'accéder au guide d'encodage.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/odd.png}
+    \caption{Capture d'écran du guide d'encodage en \HTML}
+\end{figure}
+
+La page \HTML de sortie présente un sommaire puis la documentation rédigée ainsi que les règles de validation du document \TEI. Une mise en page similaire à celle des \textit{guidelines} est obtenue. Des liens hypertextes permettent de naviguer dans le guide depuis la table des matières, vers la documentation en prose et les règles de validation, retranscrites sous forme de tableau comme dans les \textit{guidelines}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/odd2.png}
+    \caption{Capture d'écran des règles de validation en \HTML}
+\end{figure}
+
+Le scénario \textit{oddbyexample} fournit également en sortie un fichier \RNG afin de le lier aux documents \TEI pour mettre en place un schéma de validation.
+
+\newpage
 \subsection{Le schéma de validation}
 
-§ Paragraphe 1
+L'\ODD permet également de rédiger des règles de validation afin de faciliter l'encodage en \TEI et de mettre en lumière les informations manquantes ou mal encodées. En effet, la mise en place d'un schéma de validation permet, via le logiciel \textit{Oxygen}, de faire apparaître les erreurs via un code couleur : rouge pour les erreurs de première importance, et orange pour les manquements de l'encodage. 
 
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
+Plusieurs règles d'encodage ont donc été définies à partir des documents du corpus ainsi que l'échantillon. Les textes de lois suivant une structure rigoureuse, les éléments \texttt{<div>} ont fait l'objet de règles strictes afin de garantir que les erreurs de structure ou d'imbrication des éléments soient repérées : 
 
-§ Paragraphe 2
+\begin{minted}{xml}
+    <!-- Il doit y avoit 7 chapitres -->
+    <constraintSpec scheme="schematron" ident="sequence" xml:id="rule05">
+        <constraint>
+            <s:rule context="tei:body">
+                <s:assert test="count(tei:div[@type='chapter'])=7"> 
+                Il doit y avoir 7 chapitres dans le document. 
+                </s:assert>
+            </s:rule>
+        </constraint>
+    </constraintSpec>
+\end{minted}
 
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
+Afin de pouvoir rédiger des règles sur certains types d'éléments \texttt{<div>} uniquement, la syntaxe \textit{Schematron} a été utilisée. Les règles \textit{Schematron} permettent de donner dans l'attribut \texttt{@context} un chemin \xpath. Ainsi, la règle ci-dessus ne s'applique qu'aux éléments \texttt{<div>} directement contenues dans la balise \texttt{<body>}. Ces divisions qui correspondent aux chapitres des textes de loi sont obligatoirement au nombre de sept. La syntaxe \textit{Schematron} a ainsi permis d'indiquer que chaque chapitre doit contenir une ou plusieurs sections, devant elles-mêmes contenir des \lu. Les règles de validation garantissent que la structure des documents orignaux est bien respectée et régulière tout au long de l'encodage. Ces règles de validation sont essentielles afin de publier une édition scientifique numérique utilisable par les chercheurs, dans le respect de l'architecture des codes légaux chinois. 
 
-§ Paragraphe 3
+Certains éléments, en revanche, sont spécifiques à notre projet d'édition et ne sont pas primordiaux afin de réaliser les livrables du projet, comme par exemple l'intégration des images en regard du texte. Ces éléments sont importants pour remplir les objectifs du projet puisqu'inclure la numérisation des codes légaux dans le site web fait partie du périmètre. Toutefois, il ne s'agit pas d'erreurs de même niveau qu'un problème de structuration des textes, c'est pourquoi deux niveaux d'erreurs ont été distingués : 
 
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
+\begin{minted}{xml}
+    <constraintSpec scheme="schematron" ident="facs" xml:id="rule08">
+        <constraint>
+            <s:rule context="tei:body//tei:pb">
+                <s:assert test="@facs" role="WARN"> 
+                    L'attribut facs est obligatoire 
+                </s:assert>
+            </s:rule>
+        </constraint>
+    </constraintSpec>
+\end{minted}
 
+Dans la règle ci-dessus, l'attribut \texttt{role} permet de spécifier que la règle concernant l'ajout de l'attribut \texttt{@facs} pour l'intégration des images est obligatoire mais que le niveau d'erreur est inférieur à la règle précédente. La règle a donc un rôle d'\og avertissement \fg. Dans l'éditeur \textit{Oxygen}, elle apparaît en orange afin de la distinguer des erreurs de niveau supérieur.
+ \begin{figure}
+     \centering
+     \includegraphics[width=\textwidth]{images/oxygen.png}
+     \caption{Capture d'écran de l'affichage des erreurs sur Oxygen}
+ \end{figure}
+
+ \newpage
+ C'est également dans l'\ODD qu'il est possible de modifier les règles de validation afin d'étendre la \TEI. Dans le cadre de la création d'un code légal généré automatiquement pour chaque année de la dynastie Qing, il est nécessaire d'encoder des périodes de validité pour chaque \lu et \li. Les attributs \texttt{@notBefore} et \texttt{@notAfter} ne sont pas autorisés sur les éléments \texttt{<div>}. La rédaction des règles de validation a donc permis d'ajouter ces attributs sur les divisions souhaitées. Pour cela, les attributs ont été ajoutés dans la liste des attributs autorisés sur l'élément \texttt{<div>} : 
+
+ \begin{minted}
+    <attList>
+        <attDef ident="notBefore" mode="add"/>
+        <attDef ident="notAfter" mode="add"/>
+    </attList>
+ \end{minted}
+
+En plus de cet ajout, une règle \textit{Schematron} a été rédigée afin de spécifier que ces attributs sont obligatoires sur les \lu et les \li. 
+
+Une fois le schéma d'encodage défini et les règles rédigées, la transformation via le scénario \textit{oddbyexample} a créé un fichier \RNG qui doit être lié aux documents \TEI comme ceci : 
+
+\begin{minted}{xml}
+<?xml-model href="ODD_COREL.rng" type="application/xml" \\ schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="ODD_COREL.rng" type="application/xml" \\ schematypens="http://purl.oclc.org/dsdl/schematron"?>
+\end{minted}
+
+L'éditeur \textit{Oxygen} prend ensuite en compte le schéma d'encodage défini et permet de souligner les erreurs selon les différents niveaux. Ces règles de validation sont essentielles afin de permettre à l'équipe du projet de poursuivre l'encodage et atteindre le modèle de données souhaitées. La création de règles de validation permet de mettre en avant les données manquantes dans les documents et de guider l'ajout des données, ce qui assure un encodage régulier et cohérent au sein d'un texte, mais aussi d'un document à un autre. De plus, ce document peut s'avérer utile pour l'édition en \TEI d'autres textes de lois chinois et permet d'offrir à la fois une documentation claire et un outil de validation qui garantit l'obtention d'un document valide. Grâce à l'\ODD, le projet \COREL peut ainsi se détacher du schéma d'encodage \LSC initial et encoder directement les informations à ajouter et/ou de nouveaux documents en \TEI. Il est également possible de modifier l'\ODD pour ajouter de nouvelles règles si le projet d'encodage évolue dans le temps. 
