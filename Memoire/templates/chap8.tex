@@ -1,0 +1,75 @@
+\section{Conception d'une plateforme pour les chercheurs}
+    \subsection{Utilisation des sources du droit chinois en humanités numériques}
+
+L'accès aux sources du droit chinois, au croisement entre les disciplines que sont l'histoire et le droit, est encore peu développé. Les collections de la bibliothèque d'études chinoises du \cdf contient les textes de lois du corpus du projet mais la bibliothèque étant en travaux, la consultation sur place n'est possible que sur rendez-vous. Sur le web, certains projets proposent un accès aux sources mais celles-ci restent majoritairement partielles. Le projet \LSC  propose une édition trilingue des codes légaux chinois de la dynastie Qing, cependant les données ne sont pas complètes à l'heure actuelle et les documents sont toujours en cours de saisie sur le site internet. Le projet de recherche japonais \textit{Terada's Homepage for Chinese Legal History Studies in Japan} \footnote{http://www.terada.law.kyoto-u.ac.jp/index_en.htm} de l'Université de Kyoto propose une édition du \dc uniquement. Or, l'étude du droit chinois et de son évolution nécessite la consultation simultanée des différents textes de lois. La conception d'un site web réunissant ces sources dans leur intégralité afin de faciliter l'accès aux chercheurs est donc au centre du projet \COREL. 
+
+De plus, ces projets de recherche offrent uniquement un accès à leur édition en ligne, mais l'histoire du droit chinois est une discipline peu développée en humanités numériques. Les données et leur éditorialisation ne sont que peu diffusées en \textit{open access}. La production de données \textit{open source} par le projet \COREL cherche à permettre aux humanités numériques de s'approprier ce terrain de recherche et de favoriser le développement de projets de recherche sur la généalogie du droit. Cependant, des outils \textit{open source} se développent peu à peu dans les projets d'humanités numériques. La version bêta de \textit{MARKUS}, en cours de développement par l'Université de Leyde aux Pays-Bas, permet le balisage et le référencement des entités nommées pour les textes chinois. Dans le cadre du projet \COREL, nous avons également testé le script \textit{Chinese Calendar Tools} \footnote{https://gitlab.com/vandenbosch.nora/chinesecalendartools/-/tree/main}, qui permet de convertir les dates du calendrier luni-solaire chinois \footnote{Le calendrier luni-solaire, utilisé par plusieurs cultures, est un calendrier combinant le calendrier lunaire et solaire.} vers des dates du calendrier grégorien. Bien que l'échéance du financement n'ait pas permis d'exploiter ces deux outils \textit{open source} afin d'enrichir l'encodage des sources, ils permettent de démontrer que les études chinoises dans les humanités numériques en Europe se développent peu à peu. Le projet \COREL s'inscrit dans cette démarche de science ouverte et contribue avec l'éditorialisation du corpus de codes légaux de la dynastie Qing et la mise à disposition en \textit{open access} de ces données, au développement des projets d'humanités numériques pour les études chinoises. 
+
+\subsection{Les enjeux de la reconstitution de la législation}
+
+Offrir une édition scientifique numérique complète des textes légaux sous la dynastie Qing est donc un projet conséquent qui ambitionne de faciliter l'accès aux sources par les chercheurs, en concevant une plateforme unique réunissant les sources pour une consultation simultanée des textes. L'édition numérique permet à la fois de réunir les différents volumes d'un même code légal, mais aussi de proposer sur le même site web toutes les sources de droit chinois sous la dynastie Qing dont dispose le projet.
+
+Toutefois, l'éditorialisation du corpus n'est qu'une partie du projet \COREL. En effet, l'équipe souhaite reconstituer la législation de 1644 à 1911, pour chaque année de la dynastie Qing. La recréation d'un texte de loi, généré automatiquement à la demande des utilisateurs, permettrait de faciliter l'accès aux sources à un niveau supérieur. À l'instar des nombreuses compilations rédigées sous la dynastie Qing, le \cv permettrait de compiler en temps réel toutes les lois valides pour une année donnée. Cet aspect du projet vise à faciliter les recherches de l'évolution du droit par le numérique : plutôt qu'un travail de recherche comparatif entre les différents textes, les chercheurs auront accès à la reconstitution de la législation grâce à l'agrégation de toutes ces sources, directement sur le web, en libre accès. 
+
+Enfin, la reconstitution de la législation s'accompagne d'un travail sur la généalogie des lois. Les visualisations via les liens d'association dirigée entre les lois permettront également de faciliter le travail de recherche en retraçant la généalogie d'une loi en entier, sans nécessité de naviguer entre les différentes sources partielles. En effet, pour étudier la généalogie des lois, une étude de toutes les sources est nécessaire afin de trouver toutes les versions de la loi et ses modifications dans le temps, jusqu'à son abrogation. Aucun accès immédiat à la généalogie complète d'une loi n'est disponible dans les textes, puisque toutes les sources sont partielles et se complètent les unes les autres. Le projet \COREL ambitionne donc d'aider les chercheurs en facilitant ce travail de recherche sur la généalogie des lois. 
+
+\subsection{Définition des besoins utilisateurs}
+
+Le public cible du projet étant les chercheurs en histoire du droit chinois, il est possible d'établir des besoins utilisateurs précis pour le projet \COREL. D'une part, les chercheurs doivent pouvoir accéder à l'édition scientifique numérique des sources sur le site web, avec une structure des textes qui leur est familière, c'est-à-dire que l'édition des textes de lois doit se faire, à l'instar de la source originale, en chapitres et sections. Chaque chapitre, sections et les différentes lois doivent être numérotés afin de se repérer dans les textes. Les chercheurs ont aussi besoin de pouvoir naviguer entre les différents textes, le corpus se prêtant à de la consultation plutôt qu'à une lecture continue et linéaire. Une table des matières cliquable et qui indique la position actuelle de l'utilisateur doit donc être créée. 
+
+En plus de l'édition en ligne, les utilisateurs doivent pouvoir accéder à la recréation de la législation, le \cv, afin de pouvoir accéder à un texte de loi composite pour une année entre 1644 et 1911. Un format \pdf doit être disponible au téléchargement pour être consulté hors connexion. Cette reconstitution de la législation doit respecter la mise en page d'un texte de lois, c'est-à-dire qu'il doit présenter les chapitres et sections usuels. Le besoin des chercheurs n'est pas de filtrer simplement les données par dates, mais de conserver la structure des codes afin de pouvoir consulter, par exemple, les lois selon les ministères auxquels elles sont rattachées, ou encore les \li selon la loi principale qu'elles viennent compléter. 
+
+Enfin, une modélisation des liens d'association dirigée entre les lois est essentielle afin de faciliter les travaux de recherche et d'offrir une compréhension instantanée de la généalogie d'une loi. En effet, le fichier de référencement des liens entre les lois tels qu'il existe actuellement pour appuyer le projet demeure difficile d'appréhension à la première lecture et demande de naviguer via les liens hypertexte. La lecture de ce document, qui n'est pas continue, ne permet pas de saisir immédiatement la généalogie d'une loi. Apporter des visualisations aux utilisateurs est donc un besoin primordial afin de faciliter les recherches sur la généalogie des lois et leur évolution. 
+
+Afin de répondre aux besoins des chercheurs, qu'ils soient utilisateurs ou administrateurs, il est important de concervoir une plateforme adaptée, en libre accès, afin de contribuer au développement de l'histoire du droit chinois en humanités numériques.
+
+ \section{La publication de données en ligne : un travail accessible à un plus large public}
+    \subsection{L’outil TEI Publisher}
+
+%présentation et méthodologie de travail (les interviews)
+§ Paragraphe 1
+
+Idée :\\
+Exemple :\\
+Référence :\\
+Transition :\\
+
+§ Paragraphe 2
+
+Idée :\\
+Exemple :\\
+Référence :\\
+Transition :\\
+
+§ Paragraphe 3
+
+Idée :\\
+Exemple :\\
+Référence :\\
+Transition :\\
+
+\subsection{L’édition scientifique en interface graphique}
+
+§ Paragraphe 1
+
+Idée :\\
+Exemple :\\
+Référence :\\
+Transition :\\
+
+§ Paragraphe 2
+
+Idée :\\
+Exemple :\\
+Référence :\\
+Transition :\\
+
+§ Paragraphe 3
+
+Idée :\\
+Exemple :\\
+Référence :\\
+Transition :\\
+
+%si pas fait avant : parler des limites de tei publisher.
+
