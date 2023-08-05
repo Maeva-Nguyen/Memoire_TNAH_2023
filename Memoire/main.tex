@@ -79,6 +79,7 @@
 \newacronym{XPath}{\textsc{XPath}}{\emph{XML Path Language}}
 \newacronym{URL}{\textsc{URL}}{\emph{Uniform Ressource Locator}}
 \newacronym{RNG}{\textsc{Relax NG}}{\emph{Regular Language for XML Next Generation}}
+\newacronym{JATS}{\textsc{JATS}}{\emph{Journal Article Tag Suite}}
 
 % COMMANDS
 \newcommand{\enc}{École nationale des chartes\xspace}
@@ -134,6 +135,7 @@
 \newcommand{\xpath}{\gls{XPath}\xspace}
 \newcommand{\URL}{\gls{URL}\xspace}
 \newcommand{\RNG}{\gls{RNG}\xspace}
+\newcommand{\JATS}{\gls{JATS}\xspace}
 
 % Pour retirer le titre courant d'une page vide avant un chapitre
 \newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
@@ -242,6 +244,7 @@
     \addcontentsline{toc}{chapter}{\listfigurename}
     \listoffigures
     \printglossary 
+    \printbibliography[keyword={institution}, title={Histoire des institutions}]
     \printbibliography[keyword={histoire}, title={Histoire du droit chinois}]
     \printbibliography[keyword={edition}, title={Édition scientifique numérique}]
     \tableofcontents

@@ -25,51 +25,35 @@ Afin de répondre aux besoins des chercheurs, qu'ils soient utilisateurs ou admi
 
  \section{La publication de données en ligne : un travail accessible à un plus large public}
     \subsection{L’outil TEI Publisher}
+\tp est un outil de publications de données encodées en \TEI, qui s'appuie sur le système de gestion de base de données \XML \textit{eXist-db}. C'est un outil \textit{open source} qui propose de construire une édition en ligne, essentiellement en interface graphique. Des templates \HTML sont ensuite générés, ce qui permet aux chercheurs de publier leurs corpus de recherche édités en codant le moins possible. Il est également possible de publier d'autres langages via  \tp : le \XML Docbook, \JATS ou encore les fichiers .docx. L'outil \tp respecte des standards afin de faciliter l'échange des données et les principes \fair en utilisant les langages \XML (\TEI, \ODD, XQuery). La construction d'un site web à partir de l'application \tp est possible grâce à la génération des templates \HTML et de l'utilisation des \textit{webcomponents}, qui font partie des spécifications \HTML 5 afin de personnaliser le site web. Afin d'offrir un haut niveau de personnalisation tout en garantissant la pérennité des sites web construits à partir de \tp, l'application propose d'utiliser les \textit{webcomponents} comme des briques individuelles à ajouter et assembler selon les besoins utilisateurs. 
 
-%présentation et méthodologie de travail (les interviews)
-§ Paragraphe 1
+L'usage de \tp se démocratise de plus en plus dans les projets en humanités numériques. Le site web du projet \cordel (mais aussi les projets menés par l'INRIA), a été construit via \tp. L'utilisation de \tp a donc été envisagée dès le début du stage, afin d'organiser une veille sur cet outil. Cette veille s'est organisée en trois temps : 
 
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
+\begin{itemize}
+    \item La consultation de la documentation de \tp et des applications réalisées, notamment \cordel et \disco. 
+    \item La réalisation de deux entretiens avec Hugo Scheithauer (en visioconférence) et Floriane Chiffoleau (à l'INRIA). 
+    \item Un test via l'\og aire de jeu \fg de \tp, qui permet de tester immédiatement les fonctionnalités de l'application en local. 
+\end{itemize}
 
-§ Paragraphe 2
+\subsubsection{La documentation}
+\tp dispose d'une documentation complète \footnote{https://teipublisher.com/exist/apps/tei-publisher/doc/documentation.xml?odd=docbook\&view=div} consultable en ligne. En plus de la documentation écrite, il existe des cours en ligne, \og Stay home and learn \TEI from scratch \fg, proposé par \textit{e-editiones}, un groupe à but non lucratif qui oeuvre pour le développement de la science ouverte dans l'édition scientifique numérique. La documentation étant longue et exhaustive, cette première étape de la veille sur \tp s'est étalée sur plusieurs semaines en début de stage afin de se familiariser avec la méthodologie générale de la création d'un site web via \tp. La consultation ponctuelle de la documentation et des cours en ligne s'est par la suite révélée indispensable tout au long du stage, afin de compléter cette première approche, notamment lors de la mise en pratique. 
 
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
+\subsubsection{Entretiens avec des professionnels}
+En plus de la consultation de la documentation, j'ai mené deux entretiens à propos de \tp. Le premier, avec Hugo Scheithauer, à propos de l'application Data Catalogue, un projet d'édition scientifique numérique de catalogues de vente, m'a permis d'obtenir des informations générales sur la méthode de travail et la gestion d'un projet avec \tp : un tel projet est généralement mené en équipe de deux, avec un développeur \textit{front-end} et un développeur \textit{back-end}. L'utilisation de \tp, bien qu'en interface graphique, requiert des connaissances minimales en développement web et en langages \XML. M. Scheithauer a également souligné l'importance de la préparation des données avant le démarrage du projet. \textit{A priori}, avec toutes les données nécessaires identifiées et ajoutées dans l'encodage et une équipe de deux personnes, il est possible de créer un site web simple assez rapidement\footnote{Bien qu'il soit difficile d'estimer les délais de conception, qui sont propres à chaque projet, M. Scheithauer a indiqué qu'il envisageait un délai d'environ six mois pour se consacrer au développement d'une application simple, à partir d'une équipe de deux personnes}. Toutefois, si l'on souhaite un haut niveau de personnalisation pour le site web, il est probable qu'il soit nécessaire d'intervenir sur le code source de l'application directement.
 
-§ Paragraphe 3
+Un second entretien avec Floriane Chiffoleau, à propos du projet \disco, m'a permis d'approfondir ma compréhension du fonctionnement de \tp et de découvrir les méthodes de travail derrière \disco. Mme Chiffoleau m'a parlé de sa propre expérience avec \tp : elle a consacré deux semaines à la consultation de la documentation de \tp, en ayant déjà une bonne maîtrise des langages \XML, puis un mois de tests de l'application. Elle m'a présenté les différents modes d'affichage des éditions \disco, chacun permettant de mettre en lumière des informations différentes. Trois modes sont présents sur l'application \disco : un mode pour l'édition critique, un pour l'édition diplomatique et enfin un mode permettant de mettre en valeur les entités nommées. Ce dernier mode est également envisagé à ce jour pour la réalisation du projet \COREL. 
 
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/discholed.png}
+    \caption{Capture d'écran du site web \disco}
+\end{figure}
+
+Lors de cet entretien, elle a également pu souligner l'importance d'encoder des documents \TEI valides, avec des règles de validations précises dans l'\ODD. En effet, si les documents ne respectent pas les mêmes règles de validation, cela complexifie le processus de conception de l'application, étant donné que \tp permet d'attribuer un comportement à un élément (par exemple, les balises \texttt{<note>} du corpus \COREL s'affichent en bleu). Ainsi, respecter un schéma d'encodage défini permet de prévenir des erreurs d'affichages. 
+
+Une fois ces deux premières étapes de veille menées à bien, l'\og aire de jeu \fg \tp a permis d'effectuer un premier test avec le jeu de données \tei de référence. 
 
 \subsection{L’édition scientifique en interface graphique}
-
-§ Paragraphe 1
-
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
-
-§ Paragraphe 2
-
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
-
-§ Paragraphe 3
-
-Idée :\\
-Exemple :\\
-Référence :\\
-Transition :\\
-
+%l'aire de jeu tp, la 3e étape (test), différencier l'odd tp et l'odd validation, parler de behaviour et prédicat
 %si pas fait avant : parler des limites de tei publisher.
 
