@@ -32,7 +32,7 @@ L'usage de \tp se démocratise de plus en plus dans les projets en humanités nu
 \begin{itemize}
     \item La consultation de la documentation de \tp et des applications réalisées, notamment \cordel et \disco. 
     \item La réalisation de deux entretiens avec Hugo Scheithauer (en visioconférence) et Floriane Chiffoleau (à l'INRIA). 
-    \item Un test via l'\og aire de jeu \fg de \tp, qui permet de tester immédiatement les fonctionnalités de l'application en local. 
+    \item Un test via l'\og aire de jeux \fg de \tp, qui permet de tester immédiatement les fonctionnalités de l'application en local. 
 \end{itemize}
 
 \subsubsection{La documentation}
@@ -51,9 +51,41 @@ Un second entretien avec Floriane Chiffoleau, à propos du projet \disco, m'a pe
 
 Lors de cet entretien, elle a également pu souligner l'importance d'encoder des documents \TEI valides, avec des règles de validations précises dans l'\ODD. En effet, si les documents ne respectent pas les mêmes règles de validation, cela complexifie le processus de conception de l'application, étant donné que \tp permet d'attribuer un comportement à un élément (par exemple, les balises \texttt{<note>} du corpus \COREL s'affichent en bleu). Ainsi, respecter un schéma d'encodage défini permet de prévenir des erreurs d'affichages. 
 
-Une fois ces deux premières étapes de veille menées à bien, l'\og aire de jeu \fg \tp a permis d'effectuer un premier test avec le jeu de données \tei de référence. 
+Une fois ces deux premières étapes de veille menées à bien, l'aire de jeux \tp a permis d'effectuer un premier test avec le jeu de données \TEI de référence. 
 
 \subsection{L’édition scientifique en interface graphique}
-%l'aire de jeu tp, la 3e étape (test), différencier l'odd tp et l'odd validation, parler de behaviour et prédicat
-%si pas fait avant : parler des limites de tei publisher.
+
+\tp permet en effet de construire son site web en interface graphique, grâce à une \ODD. L'\ODD \tp n'est pas à confondre avec l'\ODD qui permet de documenter un projet d'encodage et de définir des règles de validation. L'\ODD \tp est à distinguer d'une \ODD classique, puisqu'elle permet d'attribuer à un élément un comportement (\og behaviour \fg), c'est-à-dire une manière de s'afficher. Grâce à des requêtes XQuery générées automatiquement par \tp, les balises \TEI sont attribuées l'affichage souhaité sur le template \HTML. Il est possible de tester directement cette fonctionnalité grâce à l'aire de jeux de l'application \tp, une interface qui permet d'accéder à différentes \ODD d'exemples, comme pour les correspondances de Van Gogh ou les pièces de Shakespeare.\footnote{Les correspondances de Van Gogh et les pièces de Shakespeare sont deux éditions numériques publiées qui sont utilisées comme exemples par \tp.} L'aire de jeux donne l'accès aux \ODD et permettent de les modifier afin de tester les différentes possibilités d'affichage offertes par \tp. Il est possible de télécharger ses propres documents sur l'aire de jeux et de tester les \ODD disponibles, en les modifiant pour les adapter aux documents. Il est également possible de créer sa propre \ODD.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/playground.png}
+    \caption{Capture d'écran de l'aire de jeux \tp}
+\end{figure}
+
+La modification de l'\ODD est accessible intégralement en interface graphique. Ce mode d'édition est conseillé pour les débutants. Sur la gauche, il est possible de sélectionner les balises dont on veut modifier le comportement. Grâce à un chemin \xpath et à du code \CSS, \tp lance ensuite une requête XQuery qui applique le comportement choisi dans les templates \HTML générés automatiquement. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/odd_playground.png}
+    \caption{Capture d'écran de l'aire de jeux \tp : modifier le comportement d'un élément}
+\end{figure}
+
+Il est également possible d'éditer l'\ODD directement dans le code \XML. Ce mode d'édition nécessite cependant une connaissance avancée des langages \XML et une bonne compréhension du \textit{\TEI Processing Model}, qui est le langage derrière l'\ODD de \tp. Le \TEI Processing Model fait partie des \textit{guidelines} \TEI et leur documentation est donc accessible en ligne. 
+
+L'objectif du projet \COREL étant de produire une édition scientifique numérique le plus possible en interface graphique, c'est le premier mode d'édition de l'\ODD qui a été jugé le plus pertinent pour le projet. Dans le cadre du stage, un premier test de cette fonctionnalité de \tp a donc été réalisé, afin de reproduire l'un des différents modes d'affichages souhaités pour le projet.\footnote{À propos de ces différents modes d'affichages, voire la partie concernée dans le cahier des charges, en annexes.} 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/tei_publisher_test.png}
+    \caption{Capture d'écran du résultat du test de l'aire de jeux}
+\end{figure}
+
+Le mode d'affichage principal souhaité par le projet permet de mettre en avant les commentaires officiels contenus par les textes de lois, en caractères bleus de police inférieure au texte principal. Ces commentaires, contenus dans des balises \texttt{<note>} ont été sélectionnés via un chemin \xpath : \texttt{@type='official'}. En effet, les textes contiennet plusieurs types de commentaires. Seuls les commentaires officiels ont été sélectionnés afin de leur attribuer un comportement. Par défaut, \tp traite les balises \texttt{<note>} comme des notes de bas de page, via le comportement \textit{note}. Afin de les affichers au sein du texte, il a fallu modifier le comportement par défaut et sélectionner le comportement \textit{inline}, qui permet d'afficher les balises au sein du texte. Ensuite, le code \CSS suivant a permis d'afficher ces commentaires en bleu dans une police inférieure : 
+
+\begin{minted}{css}
+    font-size: small; color: blue;
+\end{minted}
+
+L'aire de jeux \tp est donc un moyen efficace de tester les fonctionnalités offertes par l'application avant de démarrer un projet. Grâce à la veille informationnelle puis au test effectué lors du stage, il a été possible de déterminer que \tp semble être un outil compatible avec les besoins du projet et la réalisation des livrables. Cependant, il est également possible de souligner les limites de \tp. En effet, bien qu'entièrement réalisable en interface graphique, l'édition scientifique numérique via \tp nécessite une bonne maîtrise des langages \XML et du développement web, notamment \HTML et \CSS. La réalisation d'un site web via \tp permet de passer moins de temps à coder et de créer une édition dans le respect des normes d'interopérabilité et de pérennité des données sur le web. Cependant, la prise en main de l'outil n'est pas instantanée et nécessite des compétences techniques minimales et un temps de formation. Si les chercheurs auront la possibilité d'ajouter et de modifier des documents sans problème en \XML, via l'interface eXist, il leur sera plus difficile de paramétrer les modes d'affichages seuls, malgré l'interface graphique de \tp. 
 
