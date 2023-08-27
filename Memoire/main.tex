@@ -80,6 +80,7 @@
 \newacronym{URL}{\textsc{URL}}{\emph{Uniform Ressource Locator}}
 \newacronym{RNG}{\textsc{Relax NG}}{\emph{Regular Language for XML Next Generation}}
 \newacronym{JATS}{\textsc{JATS}}{\emph{Journal Article Tag Suite}}
+\newacronym{CSS}{\textsc{CSS}}{\emph{Cascading Style Sheet}}
 
 % COMMANDS
 \newcommand{\enc}{École nationale des chartes\xspace}
@@ -136,6 +137,7 @@
 \newcommand{\URL}{\gls{URL}\xspace}
 \newcommand{\RNG}{\gls{RNG}\xspace}
 \newcommand{\JATS}{\gls{JATS}\xspace}
+\newcommand{\CSS}{\gls{CSS}\xspace}
 
 % Pour retirer le titre courant d'une page vide avant un chapitre
 \newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
@@ -162,7 +164,7 @@
     \addcontentsline{toc}{chapter}{Remerciements}
     
     \chapterNo{Introduction}
-    \include{templates/introduction}
+    \input{templates/introduction}
     \addcontentsline{toc}{chapter}{Introduction}
 
     \thispagestyle{empty}
@@ -193,17 +195,20 @@
 
     \part{La préparation des données à l’initialisation d’un projet, enjeux de l’encodage en XML-TEI}
         \chapter{Initialisation et démarrage du projet}
+        Afin de pouvoir lancer la phase de démarrage du projet \COREL et de commencer la réalisation des livrables, il est nécessaire de s'intéresser à la préparation des données, phase étroitement liée à la gestion de projet et à la rédaction d'un cahier des charges fonctionnels afin de définir précisément les objectifs à atteindre et les données nécessaire à leur bonne réalisation.
                     \include{templates/chap4}
             
         \clearemptydoublepage
         
         \chapter{L’encodage en XML-TEI : un format standard des données}
+        Afin de contribuer à l'ouverture des données et à l'enrichissement des données de la recherche, le projet \COREL a choisi le format \XML-\TEI afin de se conformer à un standard de l'édition scientifique numérique et respecter le principe \fair des données.
                     \include{templates/chap5}
              
             
         \clearemptydoublepage
         
         \chapter{Définir le modèle de données du projet}
+        La préparation des données nécessite d'établir un écosystème des données, afin de lier les sources du projet entre elles et d'obtenir un jeu de données permettant de réaliser les livrables attendus en fin de financement. Cette définition d'un modèle de données est essentielle afin d'obtenir un aperçu des données finales et de mettre en lumière les données à ajouter dans l'encodage.
                     \include{templates/chap6}
              
             
@@ -211,17 +216,20 @@
 
     \part{La mise à disposition des données pour les chercheurs : comment agréger des sources partielles grâce au numérique ?}
     \chapter{Les bases de données document pour agréger des sources partielles}
+    Le projet \COREL est fondé sur une base de données orientée document. Afin de comprendre l'architecture des données du projet, il est pertinent de s'intéresser à la structure de cette base de données et aux avantages qu'elle apporte.
                     \include{templates/chap7}
             
         \clearemptydoublepage
         
         \chapter{La mise en place d’un outil open source pour les chercheurs}
+        Le projet \COREL se trouve au croisement entre humanités numériques, droit chinois et histoire. Projet pluridisciplinaire, il nécessite une étroite collaboration entre chercheurs du droit chinois et spécialistes des humanités numériques, afin de mettre en place un outil exploitable par les chercheurs tout en contribuant à la science ouverte.
                     \include{templates/chap8}
              
             
         \clearemptydoublepage
         
         \chapter{Assurer un outil pérenne}
+        La création d'une plateforme pour les chercheurs n'est pas sans apporter la réflexion de la pérennité d'un tel outil. Il est pertinent de s'intéresser à la maintenabilité des livrables dans le temps mais aussi à leurs pespectives d'évolution futures. 
                     \include{templates/chap9}
              
             
@@ -230,6 +238,7 @@
     \chapterNo{Conclusion}
     \pagestyle{empty}
     \addcontentsline{toc}{chapter}{Conclusion}
+    \input{templates/conclusion}
 
 \appendix
     \part*{Annexes}	
