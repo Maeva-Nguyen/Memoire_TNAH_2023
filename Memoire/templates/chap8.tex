@@ -49,7 +49,7 @@ Un second entretien avec Floriane Chiffoleau, à propos du projet \disco, m'a pe
     \caption{Capture d'écran du site web \disco}
 \end{figure}
 
-Lors de cet entretien, elle a également pu souligner l'importance d'encoder des documents \TEI valides, avec des règles de validations précises dans l'\ODD. En effet, si les documents ne respectent pas les mêmes règles de validation, cela complexifie le processus de conception de l'application, étant donné que \tp permet d'attribuer un comportement à un élément (par exemple, les balises \texttt{<note>} du corpus \COREL s'affichent en bleu). Ainsi, respecter un schéma d'encodage défini permet de prévenir des erreurs d'affichages. 
+Lors de cet entretien, elle a également pu souligner l'importance d'encoder des documents \TEI valides, avec des règles de validations précises dans l'\ODD. En effet, si les documents ne respectent pas les mêmes règles de validation, cela complexifie le processus de conception de l'application, étant donné que \tp permet d'attribuer un comportement à un élément (par exemple, les balises \texttt{<note/>} du corpus \COREL s'affichent en bleu). Ainsi, respecter un schéma d'encodage défini permet de prévenir des erreurs d'affichages. 
 
 Une fois ces deux premières étapes de veille menées à bien, l'aire de jeux \tp a permis d'effectuer un premier test avec le jeu de données \TEI de référence. 
 
@@ -81,7 +81,7 @@ L'objectif du projet \COREL étant de produire une édition scientifique numéri
     \caption{Capture d'écran du résultat du test de l'aire de jeux}
 \end{figure}
 
-Le mode d'affichage principal souhaité par le projet permet de mettre en avant les commentaires officiels contenus par les textes de lois, en caractères bleus de police inférieure au texte principal. Ces commentaires, contenus dans des balises \texttt{<note>} ont été sélectionnés via un chemin \xpath : \texttt{@type='official'}. En effet, les textes contiennet plusieurs types de commentaires. Seuls les commentaires officiels ont été sélectionnés afin de leur attribuer un comportement. Par défaut, \tp traite les balises \texttt{<note>} comme des notes de bas de page, via le comportement \textit{note}. Afin de les affichers au sein du texte, il a fallu modifier le comportement par défaut et sélectionner le comportement \textit{inline}, qui permet d'afficher les balises au sein du texte. Ensuite, le code \CSS suivant a permis d'afficher ces commentaires en bleu dans une police inférieure : 
+Le mode d'affichage principal souhaité par le projet permet de mettre en avant les commentaires officiels contenus par les textes de lois, en caractères bleus de police inférieure au texte principal. Ces commentaires, contenus dans des balises \texttt{<note/>} ont été sélectionnés via un chemin \xpath : \texttt{@type='official'}. En effet, les textes contiennet plusieurs types de commentaires. Seuls les commentaires officiels ont été sélectionnés afin de leur attribuer un comportement. Par défaut, \tp traite les balises \texttt{<note/>} comme des notes de bas de page, via le comportement \textit{note}. Afin de les affichers au sein du texte, il a fallu modifier le comportement par défaut et sélectionner le comportement \textit{inline}, qui permet d'afficher les balises au sein du texte. Ensuite, le code \CSS suivant a permis d'afficher ces commentaires en bleu dans une police inférieure : 
 
 \begin{minted}{css}
     font-size: small; color: blue;
